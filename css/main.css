@@ -1952,7 +1952,11 @@ header .header-logo a {
 	height: 100%;
 	background: #EBEBEB;
 	width: 50%;
+<<<<<<< HEAD
 	background-image: url(..images\profile-bg.jepg);
+=======
+	background-image: url(../images/profile-bg.jepg);
+>>>>>>> ce37e4f801e4bb71aef2956d4d5e2e306d9562cf
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;
