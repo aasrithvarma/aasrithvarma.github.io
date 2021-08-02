@@ -1,47 +1,47 @@
 /* ===================================================================
  * Howdy - Main JS
  *
- * ------------------------------------------------------------------- */ 
+ * ------------------------------------------------------------------- */
 
 (function($) {
 
 	"use strict";
 
-	var cfg = {		
-		defAnimation   : "fadeInUp",    // default css animation		
+	var cfg = {
+		defAnimation   : "fadeInUp",    // default css animation
 		scrollDuration : 800,           // smoothscroll duration
 		statsDuration  : 4000           // stats animation duration
-	},	
+	},
 	$WIN = $(window);
 
-	
-	/* Preloader 
+
+	/* Preloader
 	 * -------------------------------------------------- */
 	var ssPreloader = function() {
 
-		$WIN.on('load', function() {	
+		$WIN.on('load', function() {
 
 			// force page scroll position to top at page refresh
 			$('html, body').animate({ scrollTop: 0 }, 'normal');
 
-	      // will first fade out the loading animation 
+	      // will first fade out the loading animation
 	    	$("#loader").fadeOut("slow", function(){
 
 	        // will fade out the whole DIV that covers the website.
 	        $("#preloader").delay(300).fadeOut("slow");
 
-	      }); 
+	      });
 	  	});
-	}; 
+	};
 
 
 	/* FitVids
-	------------------------------------------------------ */ 
+	------------------------------------------------------ */
 	var ssFitVids = function() {
 		$(".fluid-video-wrapper").fitVids();
-	};  		
+	};
 
-   
+
 	/*	Masonry
 	------------------------------------------------------ */
 	var ssMasonryFolio = function() {
@@ -49,7 +49,7 @@
 		var containerBricks = $('.bricks-wrapper');
 
 		containerBricks.imagesLoaded( function() {
-			containerBricks.masonry( {	
+			containerBricks.masonry( {
 			  	itemSelector: '.brick',
 			  	resize: true
 			});
@@ -61,10 +61,10 @@
 	------------------------------------------------------- */
 	var ssLightGallery = function() {
 
-		$('#folio-wrap').lightGallery({  
+		$('#folio-wrap').lightGallery({
 			showThumbByDefault: false,
 			hash: false,
-			selector: ".item-wrap"		
+			selector: ".item-wrap"
 		});
 	};
 
@@ -77,17 +77,17 @@
 
 		$WIN.on('scroll', function() {
 
-			if ($WIN.scrollTop() > 150) {				
+			if ($WIN.scrollTop() > 150) {
 				menuTrigger.addClass('opaque');
 			}
-			else {				
+			else {
 				menuTrigger.removeClass('opaque');
 			}
 
-		}); 
+		});
 	};
 
-	
+
   	/* OffCanvas Menu
 	 * ------------------------------------------------------ */
    var ssOffCanvas = function() {
@@ -108,11 +108,11 @@
 		// close menu by clicking the close button
 		closeButton.on('click', function(e){
 			e.preventDefault();
-			menuTrigger.trigger('click');	
+			menuTrigger.trigger('click');
 		});
 
 		// close menu clicking outside the menu itself
-		siteBody.on('click', function(e){		
+		siteBody.on('click', function(e){
 			if( !$(e.target).is('#menu-nav-wrap, #header-menu-trigger, #header-menu-trigger span') ) {
 				menuTrigger.removeClass('is-clicked');
 				siteBody.removeClass('menu-is-open');
@@ -129,9 +129,9 @@
 		$('.smoothscroll').on('click', function (e) {
 			var target = this.hash,
 			$target    = $(target);
-	 	
+
 		 	e.preventDefault();
-		 	e.stopPropagation();	   	
+		 	e.stopPropagation();
 
 	    	$('html, body').stop().animate({
 	       	'scrollTop': $target.offset().top
@@ -152,7 +152,7 @@
   /* Placeholder Plugin Settings
 	* ------------------------------------------------------ */
 	var ssPlaceholder = function() {
-		$('input, textarea, select').placeholder();  
+		$('input, textarea, select').placeholder();
 	};
 
 
@@ -166,7 +166,7 @@
 	   statSection.waypoint({
 	   	handler: function(direction) {
 
-	      	if (direction === "down") { 
+	      	if (direction === "down") {
 				   stats.each(function () {
 					   var $this = $(this);
 
@@ -178,12 +178,12 @@
 					    	}
 					  	});
 					});
-	       	} 
+	       	}
 
 	       	// trigger once only
-	       	this.destroy(); 
-			},	
-			offset: "90%"	
+	       	this.destroy();
+			},
+			offset: "90%"
 		});
 
   	};
@@ -195,10 +195,10 @@
 
   		$('.alert-box').on('click', '.close', function() {
 		  $(this).parent().fadeOut(500);
-		}); 
+		});
 
-  	};	  	
-	
+  	};
+
 
   /* Animations
 	* ------------------------------------------------------- */
@@ -216,10 +216,10 @@
 						setTimeout(function() {
 							$('body .animate-this.item-animate').each(function(ctr) {
 								var el       = $(this),
-								animationEfx = el.data('animate') || null;	
+								animationEfx = el.data('animate') || null;
 
 	                  	if (!animationEfx) {
-			                 	animationEfx = defAnimationEfx;	                 	
+			                 	animationEfx = defAnimationEfx;
 			               }
 
 			              	setTimeout( function () {
@@ -227,93 +227,93 @@
 									el.removeClass('item-animate');
 								}, ctr * 50);
 
-							});								
+							});
 						}, 100);
 					}
 
 					// trigger once only
-	       		this.destroy(); 
-				}, 
+	       		this.destroy();
+				},
 				offset: '95%'
-			}); 
+			});
 		}
 
 	};
-	
+
 
   /* Intro Animation
 	* ------------------------------------------------------- */
 	var ssIntroAnimation = function() {
 
 		$WIN.on('load', function() {
-		
+
 	     	if (!$("html").hasClass('no-cssanimations')) {
 	     		setTimeout(function(){
 	    			$('.animate-intro').each(function(ctr) {
 						var el = $(this),
-	                   animationEfx = el.data('animate') || null;		                                      
+	                   animationEfx = el.data('animate') || null;
 
 	               if (!animationEfx) {
-	                 	animationEfx = cfg.defAnimation;	                 	
+	                 	animationEfx = cfg.defAnimation;
 	               }
 
 	              	setTimeout( function () {
 							el.addClass(animationEfx + ' animated');
 						}, ctr * 300);
-					});						
+					});
 				}, 100);
-	     	} 
-		}); 
+	     	}
+		});
 
 	};
 
 
   /* Contact Form
    * ------------------------------------------------------ */
-   var ssContactForm = function() {   	
+   var ssContactForm = function() {
 
-   	/* local validation */   	
+   	/* local validation */
 		$('#contactForm').validate({
 
 			/* submit via ajax */
-			submitHandler: function(form) {				
-				var sLoader = $('#submit-loader');			
+			submitHandler: function(form) {
+				var sLoader = $('#submit-loader');
 
-				$.ajax({   	
+				$.ajax({
 			      type: "POST",
 			      url: "inc/sendEmail.php",
 			      data: $(form).serialize(),
 
-			      beforeSend: function() { 
-			      	sLoader.fadeIn(); 
+			      beforeSend: function() {
+			      	sLoader.fadeIn();
 			      },
 			      success: function(msg) {
 		            // Message was sent
 		            if (msg == 'OK') {
-		            	sLoader.fadeOut(); 
+		            	sLoader.fadeOut();
 		               $('#message-warning').hide();
 		               $('#contactForm').fadeOut();
-		               $('#message-success').fadeIn();   
+		               $('#message-success').fadeIn();
 		            }
 		            // There was an error
 		            else {
-		            	sLoader.fadeOut(); 
+		            	sLoader.fadeOut();
 		               $('#message-warning').html(msg);
 			            $('#message-warning').fadeIn();
 		            }
 			      },
 			      error: function() {
-			      	sLoader.fadeOut(); 
-			      	$('#message-warning').html("Something went wrong. Please try again.");
+			      	sLoader.fadeOut();
+			      	$('#message-warning').html("Oopsie! AV has disconnected the form, please try contacting him in any other way :(");
 			         $('#message-warning').fadeIn();
 			      }
-		      });    		
+		      });
 	  		}
 
 		});
-   };	
+   };
 
- 
+
   /* Back to Top
 	* ------------------------------------------------------ */
 	var ssBackToTop = function() {
@@ -332,7 +332,7 @@
 				goTopButton.fadeOut(fadeOutTime);
 			}
 		});
-	};	
+	};
 
 
 
@@ -351,11 +351,11 @@
 		ssStatCounter();
 		ssAlertBoxes();
 		ssAnimations();
-		ssIntroAnimation();		
+		ssIntroAnimation();
 		ssContactForm();
 		ssBackToTop();
 
 	})();
- 
+
 
 })(jQuery);

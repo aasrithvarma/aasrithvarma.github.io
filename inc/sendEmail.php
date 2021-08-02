@@ -50,7 +50,7 @@ if($_POST) {
       $mail = mail($siteOwnersEmail, $subject, $message, $headers);
 
 		if ($mail) { echo "OK"; }
-      else { echo "Oopsie! AV has disconnected the form, please try contacting him in any other way :()"; }
+      else { echo "Oopsie! AV has disconnected the form, please try contacting him in any other way :("; }
 
 	} # end if - no validation error
 
