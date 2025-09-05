@@ -2,6 +2,8 @@
   "name": "aasrithvarma.github.io",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://aasrithvarma.github.io"
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,6 +17,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.1.0",
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
     "vite": "^5.0.0"
