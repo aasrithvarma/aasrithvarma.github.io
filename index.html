@@ -15,13 +15,15 @@
   <!-- Styles -->
   <style>
     :root {
-      --navy: #0A2E37;
-      --aqua: #1aa7a0;
+      --navy: #0A2E37;   /* name & headings */
+      --aqua: #1aa7a0;   /* subtle accent */
       --muted: #6b7280;
       --bg: #ffffff;
       --glass: rgba(255,255,255,0.6);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--bg);
@@ -29,25 +31,93 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    header { text-align: center; padding: 4rem 1.5rem 3rem; }
-    header h1 { font-size: 2.4rem; font-weight: 700; color: var(--navy); }
-    header p { margin-top: 0.8rem; font-size: 1.1rem; color: var(--muted); max-width: 650px; margin-left: auto; margin-right: auto; }
-    main { max-width: 800px; margin: auto; padding: 0 1.5rem; }
-    section { margin-bottom: 3rem; }
-    h2 { font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
-    .card { background: #fff; padding: 1.8rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 1.5rem; }
-    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-    .contact-links a {
-      display: flex; align-items: center; gap: 0.6rem;
-      background: var(--navy); color: #fff;
-      padding: 0.7rem 1.2rem; border-radius: 6px;
-      font-size: 0.95rem; font-weight: 500;
-      text-decoration: none; transition: all 0.3s ease;
+
+    header {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
     }
-    .contact-links a:hover { background: var(--aqua); transform: translateY(-3px); }
-    .contact-links i { font-size: 1rem; }
-    footer { text-align: center; padding: 2rem 1rem; margin-top: 2rem; font-size: 0.85rem; color: var(--muted); }
-    footer p:last-child { margin-top: 0.5rem; font-size: 0.8rem; font-style: italic; }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    header p {
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--navy);
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .contact-links a:hover {
+      background: var(--aqua);
+      transform: translateY(-3px);
+    }
+    .contact-links i {
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    footer p:last-child {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+
+    /* Responsive */
     @media (max-width: 600px) {
       header h1 { font-size: 2rem; }
       header p { font-size: 1rem; }
@@ -67,9 +137,18 @@
         "alternateName": "Aasrith Varma",
         "url": "https://aasrithvarma.github.io/",
         "jobTitle": "Medical Doctor, Aspiring Pediatric Cardiac Surgeon",
-        "worksFor": { "@id": "https://aasrithvarma.github.io/#saviere" },
-        "birthPlace": { "@type": "Place", "name": "Visakhapatnam, India" },
-        "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressCountry": "India" },
+        "worksFor": {
+          "@id": "https://aasrithvarma.github.io/#saviere"
+        },
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Visakhapatnam, India"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hyderabad",
+          "addressCountry": "India"
+        },
         "sameAs": [
           "https://github.com/aasrithvarma",
           "https://www.linkedin.com/in/aasrithvarma/",
@@ -87,37 +166,20 @@
         "name": "Savière",
         "url": "https://saviere.in",
         "description": "Savière is a sustainable, vegan luxury fashion initiative that focuses on upcycled textiles, slow design, and affordability through ethical production.",
-        "founder": { "@id": "https://aasrithvarma.github.io/#person" }
+        "founder": {
+          "@id": "https://aasrithvarma.github.io/#person"
+        }
       },
       {
         "@type": "Book",
-        "@id": "https://aasrithvarma.github.io/#book77",
         "name": "The Power of 77",
-        "author": { "@id": "https://aasrithvarma.github.io/#person" },
+        "author": {
+          "@id": "https://aasrithvarma.github.io/#person"
+        },
         "datePublished": "2023",
         "publisher": "Independently Published",
         "url": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
         "sameAs": "https://www.goodreads.com/book/show/166387260-the-power-of-77"
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://aasrithvarma.github.io/#website",
-        "url": "https://aasrithvarma.github.io/",
-        "name": "Dr. Tanmai Aasrith Varma Ayenampudi",
-        "description": "Personal website of Dr. Tanmai Aasrith Varma Ayenampudi — Doctor, aspiring Pediatric Cardiac Surgeon, author, activist, and founder of Savière.",
-        "publisher": { "@id": "https://aasrithvarma.github.io/#person" },
-        "author": { "@id": "https://aasrithvarma.github.io/#person" }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://aasrithvarma.github.io/#webpage",
-        "url": "https://aasrithvarma.github.io/",
-        "name": "Homepage — Dr. Tanmai Aasrith Varma Ayenampudi",
-        "isPartOf": { "@id": "https://aasrithvarma.github.io/#website" },
-        "about": { "@id": "https://aasrithvarma.github.io/#person" },
-        "author": { "@id": "https://aasrithvarma.github.io/#person" },
-        "datePublished": "2025-09-14",
-        "dateModified": "2025-09-14"
       }
     ]
   }
