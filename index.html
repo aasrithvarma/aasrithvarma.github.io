@@ -17,12 +17,14 @@
   <!-- Icons (logo-style contact links) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Social/OG metadata (kept simple; no image since none provided) -->
+  <!-- Social/OG metadata -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Dr. Tanmai Aasrith Varma Ayenampudi">
   <meta property="og:description" content="Medical Doctor | Aspiring Pediatric Cardiac Surgeon | Founder of Savière | Author of 'The Power of 77'">
   <meta property="og:url" content="https://aasrithvarma.github.io/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://aasrithvarma.github.io/assets/profile-java.png">
+  <meta property="og:image:alt" content="Portrait of Dr. Tanmai Aasrith Varma Ayenampudi">
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
     :root{
@@ -60,16 +62,14 @@
       gap:1.25rem;
       align-items:center;
     }
-    /* Monogram avatar (no image) */
     .avatar{
       width:160px;height:160px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      font-weight:700;font-size:1.6rem;letter-spacing:.5px;color:#0c625f;
-      background:conic-gradient(from 180deg at 50% 50%, #e6faf8, #d7f0ee, #e6faf8);
+      overflow:hidden;
       border:3px solid #d7f0ee;
+      background:#e5f5f4;
       box-shadow:0 8px 24px rgba(0,0,0,0.06);
-      user-select:none;
     }
+    .avatar img{width:100%;height:100%;object-fit:cover}
 
     h1{
       font-size:2.2rem;
@@ -109,7 +109,7 @@
       font-weight:700;
       text-align:center; /* section titles centered */
     }
-    /* Cards are centered containers; text inside remains left-aligned for readability */
+    /* Cards centered; internal text left-aligned for readability */
     .card{
       background:#fff;
       border-radius:14px;
@@ -122,9 +122,7 @@
     .about p{margin:0 0 .9rem;color:#243}
 
     /* Logo-style contact icons (icons centered, no visible text) */
-    .contact-wrap{
-      display:flex;justify-content:center;
-    }
+    .contact-wrap{display:flex;justify-content:center}
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(6, minmax(0,1fr));
@@ -151,13 +149,6 @@
       position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
     }
 
-    .split{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:1.25rem;
-      align-items:start;
-    }
-
     footer{
       text-align:center;
       padding:2rem 1rem 3rem;
@@ -176,10 +167,9 @@
     /* Responsive */
     @media (max-width:900px){
       .hero{grid-template-columns:120px 1fr}
-      .avatar{width:120px;height:120px;font-size:1.25rem}
+      .avatar{width:120px;height:120px}
     }
     @media (max-width:760px){
-      .split{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
     }
     @media (max-width:480px){
@@ -189,7 +179,7 @@
     }
   </style>
 
-  <!-- JSON-LD: ProfilePage + Person + Organization + Book (no image fields) -->
+  <!-- JSON-LD: ProfilePage + Person + Organization + Book -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -212,6 +202,7 @@
           "Dr. Aasrith Varma"
         ],
         "url": "https://aasrithvarma.github.io/",
+        "image": "https://aasrithvarma.github.io/assets/profile-java.png",
         "jobTitle": "Medical Doctor; Aspiring Pediatric Cardiac Surgeon",
         "description": "Medical doctor and aspiring pediatric cardiac surgeon; founder of Savière; author of 'The Power of 77'; activist for equality, veganism, and sustainability.",
         "worksFor": { "@id": "https://aasrithvarma.github.io/#saviere" },
@@ -267,7 +258,12 @@
 
   <header role="banner">
     <div class="hero">
-      <div class="avatar" aria-hidden="true">TAV</div>
+      <div class="avatar">
+        <img src="assets/profile-java.png"
+             alt="Portrait of Dr. Tanmai Aasrith Varma Ayenampudi"
+             width="160" height="160"
+             loading="eager" decoding="async">
+      </div>
       <div>
         <h1>Dr. Tanmai Aasrith Varma Ayenampudi</h1>
         <p class="subtitle">Medical Doctor • Aspiring Pediatric Cardiac Surgeon • Founder of Savière • Author of “The Power of 77”</p>
