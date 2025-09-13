@@ -1,158 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Tanmai Aasrith Varma Ayenampudi</title>
-  <meta name="description" content="Medical Doctor, Aspiring Pediatric Cardiac Surgeon, Author of 'The Power of 77', Founder of Savière, and Advocate for equality, sustainability, and accessible healthcare.">
+  <meta name="description" content="Dr. Tanmai Aasrith Varma Ayenampudi — Medical Doctor, aspiring Pediatric Cardiac Surgeon, founder of Savière, author of 'The Power of 77', activist and advocate for gender equality, veganism, and sustainable living." />
+  
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="NCgLaosh9QCvhZOHpU-zcLMkpYRAnV9BRae58DoSP2M" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script> <!-- For icons -->
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <!-- JSON-LD Person Schema -->
+  <!-- Styling -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #fdfdfd;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #8B0000; /* Premium Red */
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.1rem;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #8B0000;
+      border-bottom: 2px solid #8B0000;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 1rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #8B0000;
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 0.8rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .contact-links a:hover {
+      background: #a40000;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #111;
+      color: #ddd;
+      margin-top: 2rem;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://aasrithvarma.github.io/#person",
     "name": "Dr. Tanmai Aasrith Varma Ayenampudi",
-    "alternateName": "Tanmai",
-    "description": "Medical Doctor, Aspiring Pediatric Cardiac Surgeon, Author of 'The Power of 77'. Based in Hyderabad, India.",
-    "url": "https://aasrithvarma.github.io/",
-    "jobTitle": "Medical Doctor; Aspiring Pediatric Cardiac Surgeon; Author; Founder of Savière",
+    "alternateName": "Tanmai Aasrith Varma",
+    "jobTitle": "Medical Doctor, Aspiring Pediatric Cardiac Surgeon",
     "birthPlace": {
       "@type": "Place",
       "name": "Visakhapatnam, India"
     },
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Savière",
+      "description": "A sustainable, vegan luxury fashion brand focusing on slow fashion, upcycled design, and environmental responsibility.",
+      "url": "https://aasrithvarma.github.io/"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Savière"
+    },
+    "url": "https://aasrithvarma.github.io/",
     "sameAs": [
       "https://github.com/aasrithvarma",
-      "http://linkedin.com/in/aasrithvarma/",
+      "https://www.linkedin.com/in/aasrithvarma/",
       "https://instagram.com/aviesgram",
-      "http://researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi",
-      "http://orcid.org/0000-0002-9581-7480",
-      "https://www.goodreads.com/author/show/48487387.Tanmai_Aasrith_Varma_Ayenampudi"
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD Book Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "@id": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
-    "name": "The Power of 77",
-    "author": {
-      "@type": "Person",
-      "@id": "https://aasrithvarma.github.io/#person"
-    },
-    "url": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
-    "sameAs": [
-      "https://www.goodreads.com/book/show/166387260-the-power-of-77"
+      "https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi",
+      "https://orcid.org/0000-0002-9581-7480",
+      "https://www.goodreads.com/author/show/50359640.Tanmai_Aasrith_Varma_Ayenampudi"
     ],
-    "publisher": {
-      "@type": "Organization",
-      "name": "Goodreads"
+    "email": "mailto:dr.avie@outlook.com",
+    "knowsAbout": [
+      "Cardiac surgery",
+      "Pediatric cardiology",
+      "Sustainable fashion",
+      "Activism",
+      "Feminism",
+      "Gender equality",
+      "Healthcare accessibility",
+      "Veganism",
+      "Environment conservation"
+    ],
+    "hasWritten": {
+      "@type": "Book",
+      "name": "The Power of 77",
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Tanmai Aasrith Varma Ayenampudi"
+      },
+      "url": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
+      "sameAs": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
+      "publisher": "Goodreads",
+      "bookFormat": "https://schema.org/EBook",
+      "inLanguage": "en",
+      "genre": "Inspirational, Self-help"
     }
   }
   </script>
-  <meta name="google-site-verification" content="NCgLaosh9QCvhZOHpU-zcLMkpYRAnV9BRae58DoSP2M" />
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+<body>
+  <header>
+    <h1>Dr. Tanmai Aasrith Varma Ayenampudi</h1>
+    <p>Medical Doctor | Aspiring Pediatric Cardiac Surgeon | Founder of <em>Savière</em> | Author of <em>The Power of 77</em></p>
+  </header>
 
-  <!-- Container -->
-  <div class="max-w-5xl mx-auto px-6 py-12">
-
-    <!-- Header -->
-    <header class="text-center mb-12">
-      <h1 class="text-5xl font-extrabold text-red-700 mb-3">Dr. Tanmai Aasrith Varma Ayenampudi</h1>
-      <p class="text-lg text-gray-700">Medical Doctor • Aspiring Pediatric Cardiac Surgeon • Author • Founder of <span class="text-red-700 font-semibold">Savière</span></p>
-    </header>
-
-    <!-- About -->
-    <section class="bg-white rounded-2xl shadow p-8 mb-10">
-      <h2 class="text-2xl font-bold text-red-700 mb-4">About Me</h2>
-      <p class="text-gray-700">
-        I am a medical doctor from Hyderabad, India, with aspirations of becoming a pediatric cardiac surgeon.  
-        Alongside medicine, I write, design, and lead sustainable initiatives. My debut book, <em>The Power of 77</em>,  
-        is a journey into discipline, reflection, and the patterns that shape our lives.
-      </p>
-    </section>
-
-    <!-- Savière -->
-    <section class="bg-white rounded-2xl shadow p-8 mb-10">
-      <h2 class="text-2xl font-bold text-red-700 mb-4">Savière</h2>
-      <p class="mb-4 text-gray-700">
-        <strong>Savière</strong> is my vision of sustainable luxury: a brand rooted in veganism, slow fashion,  
-        and mindful design. Its mission is to create timeless pieces from upcycled fabrics while reducing  
-        waste and encouraging conscious consumption. Savière embodies silent luxury — comfort, sustainability,  
-        and elegance without compromise.
-      </p>
-    </section>
-
-    <!-- Activism -->
-    <section class="bg-white rounded-2xl shadow p-8 mb-10">
-      <h2 class="text-2xl font-bold text-red-700 mb-4">Advocacy & Activism</h2>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Advocate for <strong>feminism</strong> and <strong>gender equality</strong>.</li>
-        <li>Supporter of <strong>accessible and affordable healthcare</strong> for all.</li>
-        <li>Promoter of <strong>veganism</strong> and ethical living.</li>
-        <li>Environmental conservation and sustainable design activist.</li>
-      </ul>
-    </section>
-
-    <!-- Book -->
-    <section class="bg-white rounded-2xl shadow p-8 mb-10">
-      <h2 class="text-2xl font-bold text-red-700 mb-4">My Book</h2>
-      <p class="mb-4 text-gray-700">
-        <strong><em>The Power of 77</em></strong> explores discipline, thought, and meaning in everyday actions.  
-        It inspires readers to find balance and growth through structured reflection.
-      </p>
-      <a href="https://www.goodreads.com/book/show/166387260-the-power-of-77"
-         target="_blank"
-         class="inline-block bg-red-700 text-white px-5 py-2 rounded-lg shadow hover:bg-red-800 transition">
-         View on Goodreads
-      </a>
-    </section>
-
-    <!-- Contact & Links -->
-    <section class="bg-white rounded-2xl shadow p-8 mb-10">
-      <h2 class="text-2xl font-bold text-red-700 mb-6">Connect</h2>
-      <div class="flex flex-wrap gap-6 text-gray-700">
-        <a href="mailto:dr.avie@outlook.com" class="flex items-center space-x-2 hover:text-red-700">
-          <i data-lucide="mail"></i><span>Email</span>
-        </a>
-        <a href="https://github.com/aasrithvarma" class="flex items-center space-x-2 hover:text-red-700">
-          <i data-lucide="github"></i><span>GitHub</span>
-        </a>
-        <a href="http://linkedin.com/in/aasrithvarma/" class="flex items-center space-x-2 hover:text-red-700">
-          <i data-lucide="linkedin"></i><span>LinkedIn</span>
-        </a>
-        <a href="https://instagram.com/aviesgram" class="flex items-center space-x-2 hover:text-red-700">
-          <i data-lucide="instagram"></i><span>Instagram</span>
-        </a>
-        <a href="http://researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" class="flex items-center space-x-2 hover:text-red-700">
-          <i data-lucide="book"></i><span>ResearchGate</span>
-        </a>
-        <a href="http://orcid.org/0000-0002-9581-7480" class="flex items-center space-x-2 hover:text-red-700">
-          <i data-lucide="file-text"></i><span>ORCID</span>
-        </a>
-        <a href="https://www.goodreads.com/author/show/48487387.Tanmai_Aasrith_Varma_Ayenampudi" class="flex items-center space-x-2 hover:text-red-700">
-          <i data-lucide="book-open"></i><span>Goodreads</span>
-        </a>
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <div class="card">
+        <p>I am a medical doctor and aspiring pediatric cardiac surgeon, passionate about accessible healthcare and affordability. I founded <strong>Savière</strong>, a sustainable, vegan luxury fashion brand rooted in slow fashion and eco-conscious living. I am also the author of <em>The Power of 77</em>, a book on inspiration and self-growth.</p>
+        <p>Beyond medicine and design, I am an activist advocating for <strong>feminism</strong>, <strong>gender equality</strong>, <strong>veganism</strong>, and <strong>environment conservation</strong>.</p>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center text-gray-500 mt-12">
-      <p>© 2025 Dr. Tanmai Aasrith Varma Ayenampudi</p>
-    </footer>
-  </div>
+    <section>
+      <h2>Work & Projects</h2>
+      <div class="card">
+        <p><strong>Savière</strong> — A luxury brand with a mission to bring <em>sustainable, vegan, and eco-conscious design</em> into mainstream fashion. Focused on upcycled textiles, slow fashion, and affordability without compromising quality.</p>
+      </div>
+      <div class="card">
+        <p><strong>Author</strong> — <em>The Power of 77</em>, available on <a href="https://www.goodreads.com/book/show/166387260-the-power-of-77" target="_blank">Goodreads</a>. This book reflects my belief in inspiration, resilience, and human potential.</p>
+      </div>
+    </section>
 
-  <!-- Load Lucide icons -->
-  <script>
-    lucide.createIcons();
-  </script>
+    <section>
+      <h2>Contact & Links</h2>
+      <div class="card contact-links">
+        <a href="mailto:dr.avie@outlook.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://github.com/aasrithvarma" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/aasrithvarma/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://instagram.com/aviesgram" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
+        <a href="https://orcid.org/0000-0002-9581-7480" target="_blank"><i class="fa-solid fa-id-card"></i> ORCID</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Dr. Tanmai Aasrith Varma Ayenampudi | Built with ❤️ in Hyderabad</p>
+  </footer>
 </body>
 </html>
