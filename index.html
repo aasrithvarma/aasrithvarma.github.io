@@ -17,14 +17,12 @@
   <!-- Icons (logo-style contact links) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Social/OG metadata -->
+  <!-- Social/OG metadata (kept simple; no image since none provided) -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Dr. Tanmai Aasrith Varma Ayenampudi">
   <meta property="og:description" content="Medical Doctor | Aspiring Pediatric Cardiac Surgeon | Founder of Savière | Author of 'The Power of 77'">
   <meta property="og:url" content="https://aasrithvarma.github.io/">
-  <meta property="og:image" content="https://aasrithvarma.github.io/assets/profile-1200x1200.jpg">
-  <meta property="og:image:alt" content="Portrait of Dr. Tanmai Aasrith Varma Ayenampudi">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
 
   <style>
     :root{
@@ -34,6 +32,7 @@
       --bg:#ffffff;
       --ink:#111111;
       --chip:#f2fbfb;
+      --border:#e9f2f2;
     }
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
@@ -61,14 +60,16 @@
       gap:1.25rem;
       align-items:center;
     }
+    /* Monogram avatar (no image) */
     .avatar{
       width:160px;height:160px;border-radius:50%;
-      overflow:hidden;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:1.6rem;letter-spacing:.5px;color:#0c625f;
+      background:conic-gradient(from 180deg at 50% 50%, #e6faf8, #d7f0ee, #e6faf8);
       border:3px solid #d7f0ee;
-      background:#e5f5f4;
       box-shadow:0 8px 24px rgba(0,0,0,0.06);
+      user-select:none;
     }
-    .avatar img{width:100%;height:100%;object-fit:cover}
 
     h1{
       font-size:2.2rem;
@@ -85,7 +86,7 @@
       display:flex;
       flex-wrap:wrap;
       gap:.5rem;
-      justify-content:flex-start;
+      justify-content:center; /* center the chips */
     }
     .tag{
       background:var(--chip);
@@ -106,22 +107,31 @@
       letter-spacing:1px;
       margin:1.5rem 0 .9rem;
       font-weight:700;
+      text-align:center; /* section titles centered */
     }
+    /* Cards are centered containers; text inside remains left-aligned for readability */
     .card{
       background:#fff;
       border-radius:14px;
       padding:1.5rem;
       box-shadow:0 8px 28px rgba(0,0,0,.06);
-      margin-bottom:1rem;
+      margin:0 auto 1rem;
+      border:1px solid var(--border);
+      max-width:800px;
     }
     .about p{margin:0 0 .9rem;color:#243}
 
-    /* Logo-style contact icons (no visible text) */
+    /* Logo-style contact icons (icons centered, no visible text) */
+    .contact-wrap{
+      display:flex;justify-content:center;
+    }
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(6, minmax(0,1fr));
       gap:1rem;
       justify-items:center;
+      width:100%;
+      max-width:720px;
     }
     .contact-icon{
       width:58px;height:58px;border-radius:14px;
@@ -144,14 +154,8 @@
     .split{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:1rem;
-      align-items:center;
-    }
-    .book-cover{
-      width:100%;
-      border-radius:12px;
-      border:1px solid #eef4f4;
-      box-shadow:0 6px 18px rgba(0,0,0,.06)
+      gap:1.25rem;
+      align-items:start;
     }
 
     footer{
@@ -160,15 +164,19 @@
       color:var(--muted);
       font-size:.92rem;
     }
-    .footer-inner{
-      max-width:880px;margin:0 auto;
-    }
+    .footer-inner{max-width:880px;margin:0 auto}
     .made{color:#0c625f;font-weight:600}
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce){
+      .contact-icon{transition:none}
+      .contact-icon:hover{transform:none;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    }
 
     /* Responsive */
     @media (max-width:900px){
       .hero{grid-template-columns:120px 1fr}
-      .avatar{width:120px;height:120px}
+      .avatar{width:120px;height:120px;font-size:1.25rem}
     }
     @media (max-width:760px){
       .split{grid-template-columns:1fr}
@@ -176,13 +184,12 @@
     }
     @media (max-width:480px){
       .hero{grid-template-columns:1fr;text-align:center}
-      .avatar{margin:0 auto}
       h1{font-size:1.85rem}
       .contact-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
     }
   </style>
 
-  <!-- JSON-LD: ProfilePage + Person + Organization + Book -->
+  <!-- JSON-LD: ProfilePage + Person + Organization + Book (no image fields) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -192,8 +199,7 @@
         "@id": "https://aasrithvarma.github.io/#profile",
         "url": "https://aasrithvarma.github.io/",
         "name": "Profile of Dr. Tanmai Aasrith Varma Ayenampudi",
-        "about": { "@id": "https://aasrithvarma.github.io/#person" },
-        "primaryTopic": { "@id": "https://aasrithvarma.github.io/#person" }
+        "mainEntity": { "@id": "https://aasrithvarma.github.io/#person" }
       },
       {
         "@type": "Person",
@@ -206,11 +212,6 @@
           "Dr. Aasrith Varma"
         ],
         "url": "https://aasrithvarma.github.io/",
-        "image": [
-          "https://aasrithvarma.github.io/assets/profile-1200x1200.jpg",
-          "https://aasrithvarma.github.io/assets/profile-1200x900.jpg",
-          "https://aasrithvarma.github.io/assets/profile-1200x675.jpg"
-        ],
         "jobTitle": "Medical Doctor; Aspiring Pediatric Cardiac Surgeon",
         "description": "Medical doctor and aspiring pediatric cardiac surgeon; founder of Savière; author of 'The Power of 77'; activist for equality, veganism, and sustainability.",
         "worksFor": { "@id": "https://aasrithvarma.github.io/#saviere" },
@@ -266,10 +267,7 @@
 
   <header role="banner">
     <div class="hero">
-      <div class="avatar">
-        <!-- Replace with an actual optimized image at the same URL referenced in JSON-LD -->
-        <img src="assets/profile-1200x1200.jpg" alt="Portrait of Dr. Tanmai Aasrith Varma Ayenampudi" loading="eager" decoding="async">
-      </div>
+      <div class="avatar" aria-hidden="true">TAV</div>
       <div>
         <h1>Dr. Tanmai Aasrith Varma Ayenampudi</h1>
         <p class="subtitle">Medical Doctor • Aspiring Pediatric Cardiac Surgeon • Founder of Savière • Author of “The Power of 77”</p>
@@ -296,25 +294,27 @@
     <section aria-labelledby="contact">
       <h2 id="contact">Contact & Links</h2>
       <div class="card">
-        <div class="contact-grid" role="list">
-          <a class="contact-icon" role="listitem" href="mailto:dr.avie@outlook.com" aria-label="Email" title="Email">
-            <i class="fa-solid fa-envelope"></i><span class="sr-only">Email</span>
-          </a>
-          <a class="contact-icon" role="listitem" href="https://github.com/aasrithvarma" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub">
-            <i class="fab fa-github"></i><span class="sr-only">GitHub</span>
-          </a>
-          <a class="contact-icon" role="listitem" href="https://www.linkedin.com/in/aasrithvarma/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn">
-            <i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span>
-          </a>
-          <a class="contact-icon" role="listitem" href="https://instagram.com/aviesgram" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram">
-            <i class="fab fa-instagram"></i><span class="sr-only">Instagram</span>
-          </a>
-          <a class="contact-icon" role="listitem" href="https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" target="_blank" rel="noopener me" aria-label="ResearchGate" title="ResearchGate">
-            <i class="fab fa-researchgate"></i><span class="sr-only">ResearchGate</span>
-          </a>
-          <a class="contact-icon" role="listitem" href="https://orcid.org/0000-0002-9581-7480" target="_blank" rel="noopener me" aria-label="ORCID" title="ORCID">
-            <i class="fa-solid fa-id-card"></i><span class="sr-only">ORCID</span>
-          </a>
+        <div class="contact-wrap">
+          <div class="contact-grid" role="list">
+            <a class="contact-icon" role="listitem" href="mailto:dr.avie@outlook.com" aria-label="Email" title="Email">
+              <i class="fa-solid fa-envelope"></i><span class="sr-only">Email</span>
+            </a>
+            <a class="contact-icon" role="listitem" href="https://github.com/aasrithvarma" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub">
+              <i class="fab fa-github"></i><span class="sr-only">GitHub</span>
+            </a>
+            <a class="contact-icon" role="listitem" href="https://www.linkedin.com/in/aasrithvarma/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span>
+            </a>
+            <a class="contact-icon" role="listitem" href="https://instagram.com/aviesgram" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram">
+              <i class="fab fa-instagram"></i><span class="sr-only">Instagram</span>
+            </a>
+            <a class="contact-icon" role="listitem" href="https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" target="_blank" rel="noopener me" aria-label="ResearchGate" title="ResearchGate">
+              <i class="fab fa-researchgate"></i><span class="sr-only">ResearchGate</span>
+            </a>
+            <a class="contact-icon" role="listitem" href="https://orcid.org/0000-0002-9581-7480" target="_blank" rel="noopener me" aria-label="ORCID" title="ORCID">
+              <i class="fa-solid fa-id-card"></i><span class="sr-only">ORCID</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -329,16 +329,9 @@
 
     <section aria-labelledby="book">
       <h2 id="book">The Power of 77</h2>
-      <div class="card split">
-        <div>
-          <p><em>The Power of 77</em> is a concise work on inspiration and self-growth, drawing on lived experience, reflection, and purpose-driven action.</p>
-          <p>Learn more on Goodreads and discover reader highlights and reviews.</p>
-          <p><a href="https://www.goodreads.com/book/show/166387260-the-power-of-77" target="_blank" rel="noopener">View on Goodreads</a></p>
-        </div>
-        <div>
-          <!-- Optional cover image slot -->
-          <img class="book-cover" src="assets/book-cover-77.jpg" alt="Cover of The Power of 77" loading="lazy" decoding="async">
-        </div>
+      <div class="card">
+        <p><em>The Power of 77</em> is a concise work on inspiration and self-growth, drawing on lived experience, reflection, and purpose-driven action.</p>
+        <p>Learn more on Goodreads and discover reader highlights and reviews: <a href="https://www.goodreads.com/book/show/166387260-the-power-of-77" target="_blank" rel="noopener">View on Goodreads</a>.</p>
       </div>
     </section>
   </main>
@@ -360,7 +353,9 @@
           const y = (e.clientY - r.top) / r.height - 0.5;
           el.style.transform = `translateY(${(-y*4).toFixed(1)}px) translateX(${(x*4).toFixed(1)}px) scale(1.05)`;
         });
-        el.addEventListener('mouseleave', ()=>{ el.style.transform='translateY(0) translateX(0) scale(1)'; });
+        el.addEventListener('mouseleave', ()=>{
+          el.style.transform='translateY(0) translateX(0) scale(1)';
+        });
       });
     }
   </script>
