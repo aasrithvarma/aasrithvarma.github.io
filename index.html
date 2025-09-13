@@ -1,237 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Dr. Tanmai Aasrith Varma Ayenampudi</title>
-  <meta name="description" content="Dr. Tanmai Aasrith Varma Ayenampudi — Medical Doctor, aspiring Pediatric Cardiac Surgeon, founder of Savière, author of 'The Power of 77', activist and advocate for gender equality, veganism, and sustainable living." />
-  
-  <!-- Google Site Verification -->
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Dr. Tanmai Aasrith Varma Ayenampudi — Medical Doctor, aspiring Pediatric Cardiac Surgeon, founder of Savière, author of 'The Power of 77', and activist for gender equality, accessible healthcare, veganism and environment conservation." />
+  <link rel="canonical" href="https://aasrithvarma.github.io/" />
+
+  <!-- Google site verification -->
   <meta name="google-site-verification" content="NCgLaosh9QCvhZOHpU-zcLMkpYRAnV9BRae58DoSP2M" />
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Strong, modern font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styling -->
+  <!-- Lucide icons (lightweight SVG icons) -->
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+
+  <!-- Minimal responsive styling (mobile-first) -->
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f8fcfd;
-      color: #333;
-      line-height: 1.7;
+    :root{
+      --navy: #0A2E73;          /* name & headings */
+      --aqua: #1aa7a0;          /* subtle accent */
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --glass: rgba(10,46,115,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#111;
+      background:linear-gradient(180deg,#fbfdfe 0%, #ffffff 40%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.55;
     }
 
-    /* Header */
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, #0A2E73, #1da9a3);
-      color: white;
-      border-bottom-left-radius: 2rem;
-      border-bottom-right-radius: 2rem;
+    /* container */
+    .wrap{max-width:920px;margin:0 auto;padding:28px 20px;}
+
+    /* Hero */
+    .hero{
+      padding:26px;
+      border-radius:14px;
+      background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.6));
+      display:flex;
+      gap:20px;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.4rem;
-      color: #E6F4FF; /* lighter accent for contrast */
-      font-weight: 600;
+    .name{
+      color:var(--navy);
+      font-size:1.9rem;
+      font-weight:700;
+      letter-spacing:0.2px;
+      margin:0;
     }
-    header p {
-      margin: 0.8rem 0 0;
-      font-size: 1.1rem;
-      color: #d8f8f6;
+    .tagline{
+      color:var(--muted);
+      margin-top:8px;
+      font-size:1.02rem;
+    }
+    .meta{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:0.95rem;
     }
 
-    /* Layout */
-    main {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: auto;
+    /* grid layout for sections */
+    .grid{
+      display:grid;
+      gap:18px;
+      margin-top:20px;
+      grid-template-columns:1fr;
     }
-    section {
-      margin-bottom: 2.5rem;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #0A2E73;
-      border-bottom: 3px solid #1da9a3;
-      display: inline-block;
-      padding-bottom: 0.25rem;
-      font-weight: 600;
-    }
+    @media(min-width:900px){ .grid{grid-template-columns: 1fr 1fr;} .hero{flex-direction:row;text-align:left;padding:34px} }
 
-    /* Cards */
-    .card {
-      background: #fff;
-      border-radius: 1.2rem;
-      padding: 1.8rem;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      margin-bottom: 1.5rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+    .panel{
+      background:#fff;
+      border-radius:12px;
+      padding:18px;
+      box-shadow: 0 8px 28px rgba(12,20,40,0.06);
+      min-height:110px;
     }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    .panel h3{
+      margin:0 0 8px 0;
+      color:var(--navy);
+      font-size:1.05rem;
+      font-weight:600;
     }
+    .panel p{margin:0;color:#333;font-size:0.98rem}
+    .muted{color:var(--muted);font-size:0.95rem}
 
-    /* Contact Links */
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-    .contact-links a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #1da9a3;
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border-radius: 0.8rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-    }
-    .contact-links a:hover {
-      background: #138d88;
-      transform: scale(1.05);
-    }
+    /* wide single column sections */
+    .full{grid-column:1 / -1}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #0A2E73;
-      color: #eee;
-      margin-top: 2rem;
-      border-top-left-radius: 2rem;
-      border-top-right-radius: 2rem;
+    /* actions / book button */
+    .btn{
+      display:inline-block;
+      background:var(--aqua);
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      margin-top:12px;
+      box-shadow: 0 6px 18px rgba(26,167,160,0.16);
+      transition: transform .12s ease, box-shadow .12s ease;
     }
-    footer .social-icons {
-      margin-bottom: 1rem;
+    .btn:hover{transform:translateY(-3px);box-shadow: 0 14px 30px rgba(26,167,160,0.18);}
+
+    /* contact icons row */
+    .contacts{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:12px;
     }
-    footer .social-icons a {
-      margin: 0 0.6rem;
-      color: #d8f8f6;
-      font-size: 1.4rem;
-      transition: color 0.3s, transform 0.3s;
+    .contact-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:10px;
+      background:transparent;
+      border:1px solid rgba(10,46,115,0.06);
+      color:var(--navy);
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.95rem;
+      transition: transform .12s ease, background .12s ease;
+      min-width:140px;
+      justify-content:center;
     }
-    footer .social-icons a:hover {
-      color: #1da9a3;
-      transform: translateY(-3px);
-    }
+    .contact-btn svg{stroke:var(--navy);width:18px;height:18px}
+    .contact-btn:hover{transform:translateY(-4px);background:rgba(26,167,160,0.06);border-color:rgba(26,167,160,0.18)}
+
+    /* footer */
+    footer{margin-top:28px;padding:26px 12px;border-radius:10px;text-align:center;background:transparent}
+    .social-row{display:flex;gap:14px;justify-content:center;margin-bottom:10px}
+    .social-row a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:transparent;border:1px solid rgba(10,46,115,0.06);color:var(--navy);text-decoration:none}
+    .social-row a svg{width:18px;height:18px;stroke:var(--navy)}
+    .social-row a:hover{background:rgba(26,167,160,0.06);transform:translateY(-4px)}
+
+    /* subtle typography adjustments */
+    small.mono{color:var(--muted);font-family:monospace;font-size:0.86rem}
+
   </style>
 
-  <!-- JSON-LD Structured Data -->
+  <!-- Structured data: Person, Organization (Savière), Book -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dr. Tanmai Aasrith Varma Ayenampudi",
-    "alternateName": "Tanmai Aasrith Varma",
-    "jobTitle": "Medical Doctor, Aspiring Pediatric Cardiac Surgeon",
-    "birthPlace": {
-      "@type": "Place",
-      "name": "Visakhapatnam, India"
-    },
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Savière",
-      "description": "A sustainable, vegan luxury fashion brand focusing on slow fashion, upcycled design, and environmental responsibility.",
-      "url": "https://aasrithvarma.github.io/"
-    },
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Savière"
-    },
-    "url": "https://aasrithvarma.github.io/",
-    "sameAs": [
-      "https://github.com/aasrithvarma",
-      "https://www.linkedin.com/in/aasrithvarma/",
-      "https://instagram.com/aviesgram",
-      "https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi",
-      "https://orcid.org/0000-0002-9581-7480",
-      "https://www.goodreads.com/author/show/50359640.Tanmai_Aasrith_Varma_Ayenampudi"
-    ],
-    "email": "mailto:dr.avie@outlook.com",
-    "knowsAbout": [
-      "Cardiac surgery",
-      "Pediatric cardiology",
-      "Sustainable fashion",
-      "Activism",
-      "Feminism",
-      "Gender equality",
-      "Healthcare accessibility",
-      "Veganism",
-      "Environment conservation"
-    ],
-    "hasWritten": {
-      "@type": "Book",
-      "name": "The Power of 77",
-      "author": {
+    "@graph": [
+      {
         "@type": "Person",
-        "name": "Dr. Tanmai Aasrith Varma Ayenampudi"
+        "@id": "https://aasrithvarma.github.io/#person",
+        "name": "Dr. Tanmai Aasrith Varma Ayenampudi",
+        "alternateName": "Tanmai",
+        "description": "Medical Doctor, Aspiring Pediatric Cardiac Surgeon, Author of 'The Power of 77'. Founder of Savière. Based in Hyderabad, India.",
+        "url": "https://aasrithvarma.github.io/",
+        "jobTitle": "Medical Doctor; Aspiring Pediatric Cardiac Surgeon; Author",
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Visakhapatnam, India"
+        },
+        "email": "mailto:dr.avie@outlook.com",
+        "worksFor": {
+          "@id": "https://aasrithvarma.github.io/#saviere"
+        },
+        "sameAs": [
+          "https://github.com/aasrithvarma",
+          "https://www.linkedin.com/in/aasrithvarma/",
+          "https://instagram.com/aviesgram",
+          "https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi",
+          "https://orcid.org/0000-0002-9581-7480",
+          "https://www.goodreads.com/book/show/166387260-the-power-of-77"
+        ],
+        "knowsAbout": [
+          "Cardiac surgery",
+          "Pediatric cardiology",
+          "Sustainable fashion",
+          "Activism",
+          "Feminism",
+          "Gender equality",
+          "Healthcare accessibility",
+          "Veganism",
+          "Environment conservation"
+        ]
       },
-      "url": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
-      "sameAs": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
-      "publisher": "Goodreads",
-      "bookFormat": "https://schema.org/EBook",
-      "inLanguage": "en",
-      "genre": "Inspirational, Self-help"
-    }
+      {
+        "@type": "Organization",
+        "@id": "https://aasrithvarma.github.io/#saviere",
+        "name": "Savière",
+        "url": "https://aasrithvarma.github.io/",
+        "description": "Savière is a sustainable, vegan luxury fashion initiative that focuses on upcycled textiles, slow design, and affordability through ethical production.",
+        "sameAs": []
+      },
+      {
+        "@type": "Book",
+        "@id": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
+        "name": "The Power of 77",
+        "url": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
+        "author": {
+          "@id": "https://aasrithvarma.github.io/#person"
+        },
+        "sameAs": [
+          "https://www.goodreads.com/book/show/166387260-the-power-of-77"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Goodreads"
+        },
+        "inLanguage": "en",
+        "genre": "Inspirational, Self-help"
+      }
+    ]
   }
   </script>
+
 </head>
 <body>
-  <header>
-    <h1>Dr. Tanmai Aasrith Varma Ayenampudi</h1>
-    <p>Medical Doctor | Aspiring Pediatric Cardiac Surgeon | Founder of <em>Savière</em> | Author of <em>The Power of 77</em></p>
-  </header>
+  <div class="wrap">
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <div class="card">
-        <p>I am a medical doctor and aspiring pediatric cardiac surgeon, passionate about accessible healthcare and affordability. I founded <strong>Savière</strong>, a sustainable, vegan luxury fashion brand rooted in slow fashion and eco-conscious living. I am also the author of <em>The Power of 77</em>, a book on inspiration and self-growth.</p>
-        <p>Beyond medicine and design, I am an activist advocating for <strong>feminism</strong>, <strong>gender equality</strong>, <strong>veganism</strong>, and <strong>environment conservation</strong>.</p>
+    <!-- HERO -->
+    <div class="hero" role="banner" aria-labelledby="name">
+      <div>
+        <h1 id="name" class="name">Dr. Tanmai Aasrith Varma Ayenampudi</h1>
+        <p class="tagline">Medical Doctor • Aspiring Pediatric Cardiac Surgeon • Author of <em>The Power of 77</em></p>
+        <p class="meta">Based in Hyderabad, India — born in Visakhapatnam</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Work & Projects</h2>
-      <div class="card">
-        <p><strong>Savière</strong> — A luxury brand with a mission to bring <em>sustainable, vegan, and eco-conscious design</em> into mainstream fashion. Focused on upcycled textiles, slow fashion, and affordability without compromising quality.</p>
-      </div>
-      <div class="card">
-        <p><strong>Author</strong> — <em>The Power of 77</em>, available on <a href="https://www.goodreads.com/book/show/166387260-the-power-of-77" target="_blank">Goodreads</a>. This book reflects my belief in inspiration, resilience, and human potential.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Contact & Links</h2>
-      <div class="card contact-links">
-        <a href="mailto:dr.avie@outlook.com"><i class="fa-solid fa-envelope"></i> Email</a>
-        <a href="https://github.com/aasrithvarma" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/aasrithvarma/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://instagram.com/aviesgram" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
-        <a href="https://orcid.org/0000-0002-9581-7480" target="_blank"><i class="fa-solid fa-id-card"></i> ORCID</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="social-icons">
-      <a href="https://github.com/aasrithvarma" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/aasrithvarma/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://instagram.com/aviesgram" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="mailto:dr.avie@outlook.com"><i class="fa-solid fa-envelope"></i></a>
     </div>
-    <p>© 2025 Dr. Tanmai Aasrith Varma Ayenampudi</p>
-  </footer>
+
+    <!-- MAIN GRID -->
+    <div class="grid" role="main" aria-label="Main content">
+
+      <div class="panel full">
+        <h3>About</h3>
+        <p class="muted">Short & meaningful first impression</p>
+        <p style="margin-top:10px">
+          I’m a clinician and researcher with a deep interest in pediatric cardiac surgery, accessible healthcare and sustainable living.
+          I founded <strong>Savière</strong> — an initiative focused on vegan, upcycled, and affordable slow-design — and I authored <em>The Power of 77</em>.
+          I actively advocate for feminism, gender-equality, veganism and environmental conservation.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Work & Focus</h3>
+        <p class="muted">Practice · Research · Ethics</p>
+        <p style="margin-top:8px">Clinical training with a focus on pediatric cardiac care, ongoing research and health advocacy. I combine clinical work with systems-level thinking to improve access, affordability and outcomes.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Savière (mission)</h3>
+        <p class="muted">Sustainable design with purpose</p>
+        <p style="margin-top:8px">Savière aims to reduce textile waste by creating timeless pieces from upcycled materials, using vegan-friendly processes and prioritizing ethical, affordable production.</p>
+      </div>
+
+      <div class="panel full">
+        <h3>The Power of 77</h3>
+        <p class="muted">Author</p>
+        <p style="margin-top:8px">A reflective, action-oriented book about discipline, consistency and the small habits that compound into meaningful change.</p>
+        <a class="btn" href="https://www.goodreads.com/book/show/166387260-the-power-of-77" target="_blank" rel="noopener">View on Goodreads</a>
+      </div>
+
+      <div class="panel full">
+        <h3>Advocacy</h3>
+        <p class="muted">What I stand for</p>
+        <ul style="margin-top:10px">
+          <li>Feminism & gender equality</li>
+          <li>Accessible & affordable healthcare</li>
+          <li>Veganism & ethical living</li>
+          <li>Environmental conservation</li>
+        </ul>
+      </div>
+
+      <div class="panel full">
+        <h3>Contact & Profiles</h3>
+        <p class="muted">Reach out — or find me on these platforms</p>
+
+        <div class="contacts" aria-label="Contact links">
+          <a class="contact-btn" href="mailto:dr.avie@outlook.com">
+            <i data-lucide="mail"></i><span>Email</span>
+          </a>
+
+          <a class="contact-btn" href="https://github.com/aasrithvarma" target="_blank" rel="noopener">
+            <i data-lucide="github"></i><span>GitHub</span>
+          </a>
+
+          <a class="contact-btn" href="https://www.linkedin.com/in/aasrithvarma/" target="_blank" rel="noopener">
+            <i data-lucide="linkedin"></i><span>LinkedIn</span>
+          </a>
+
+          <a class="contact-btn" href="https://instagram.com/aviesgram" target="_blank" rel="noopener">
+            <i data-lucide="instagram"></i><span>Instagram</span>
+          </a>
+
+          <a class="contact-btn" href="https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" target="_blank" rel="noopener">
+            <i data-lucide="book"></i><span>ResearchGate</span>
+          </a>
+
+          <a class="contact-btn" href="https://orcid.org/0000-0002-9581-7480" target="_blank" rel="noopener">
+            <i data-lucide="award"></i><span>ORCID</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+      <div class="social-row" aria-hidden="false">
+        <a href="https://github.com/aasrithvarma" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
+        <a href="https://www.linkedin.com/in/aasrithvarma/" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
+        <a href="https://instagram.com/aviesgram" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
+        <a href="mailto:dr.avie@outlook.com"><i data-lucide="mail"></i></a>
+      </div>
+      <small class="mono">© 2025 Dr. Tanmai Aasrith Varma Ayenampudi — Hyderabad</small>
+    </footer>
+
+  </div>
+
+  <!-- Activate lucide icons -->
+  <script>lucide.createIcons();</script>
 </body>
 </html>
