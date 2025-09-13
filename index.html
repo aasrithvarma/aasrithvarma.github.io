@@ -18,27 +18,33 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: #fdfdfd;
+      background: #f8fcfd;
       color: #333;
       line-height: 1.7;
     }
+
+    /* Header */
     header {
       text-align: center;
-      padding: 2.5rem 1rem;
-      background: #f8f9fa;
-      border-bottom: 1px solid #eee;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #0A2E73, #1da9a3);
+      color: white;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
     }
     header h1 {
       margin: 0;
-      font-size: 2.2rem;
-      color: #0A2E73; /* Dark Blue for name */
+      font-size: 2.4rem;
+      color: #E6F4FF; /* lighter accent for contrast */
       font-weight: 600;
     }
     header p {
-      margin: 0.5rem 0 0;
+      margin: 0.8rem 0 0;
       font-size: 1.1rem;
-      color: #555;
+      color: #d8f8f6;
     }
+
+    /* Layout */
     main {
       padding: 2rem 1rem;
       max-width: 900px;
@@ -48,21 +54,30 @@
       margin-bottom: 2.5rem;
     }
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
       color: #0A2E73;
-      border-bottom: 2px solid #8B0000;
+      border-bottom: 3px solid #1da9a3;
       display: inline-block;
       padding-bottom: 0.25rem;
       font-weight: 600;
     }
+
+    /* Cards */
     .card {
       background: #fff;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      margin-bottom: 1rem;
+      border-radius: 1.2rem;
+      padding: 1.8rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Contact Links */
     .contact-links {
       display: flex;
       flex-wrap: wrap;
@@ -73,35 +88,41 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: #8B0000; /* premium red accent */
+      background: #1da9a3;
       color: white;
-      padding: 0.6rem 1rem;
+      padding: 0.7rem 1.2rem;
       border-radius: 0.8rem;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
       font-size: 0.95rem;
     }
     .contact-links a:hover {
-      background: #a40000;
+      background: #138d88;
+      transform: scale(1.05);
     }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 1.8rem 1rem;
+      padding: 2rem 1rem;
       background: #0A2E73;
       color: #eee;
       margin-top: 2rem;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
     }
     footer .social-icons {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
     }
     footer .social-icons a {
-      margin: 0 0.5rem;
-      color: #eee;
-      font-size: 1.2rem;
-      transition: color 0.3s;
+      margin: 0 0.6rem;
+      color: #d8f8f6;
+      font-size: 1.4rem;
+      transition: color 0.3s, transform 0.3s;
     }
     footer .social-icons a:hover {
-      color: #ff6f6f; /* light red hover */
+      color: #1da9a3;
+      transform: translateY(-3px);
     }
   </style>
 
