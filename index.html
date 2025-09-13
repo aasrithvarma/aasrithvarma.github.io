@@ -1,144 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dr. Tanmai Aasrith Varma Ayenampudi — Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Tanmai Aasrith Varma Ayenampudi</title>
+  <meta name="description" content="Medical Doctor, Aspiring Pediatric Cardiac Surgeon, Author of 'The Power of 77'. Founder of sustainable ventures, based in Hyderabad, India.">
 
-  <!-- SEO + description -->
-  <meta name="description" content="Dr. Tanmai Aasrith Varma Ayenampudi — Medical Doctor, Aspiring Pediatric Cardiac Surgeon, Founder of Saviere. Based in Hyderabad, India." />
-  <link rel="canonical" href="https://aasrithvarma.github.io/" />
-
-  <!-- OpenGraph -->
-  <meta property="og:title" content="Dr. Tanmai A. V. Ayenampudi — Portfolio" />
-  <meta property="og:description" content="Medical Doctor | Aspiring Pediatric Cardiac Surgeon | Founder of Saviere | Hyderabad, India" />
-  <meta property="og:type" content="profile" />
-  <meta property="og:url" content="https://aasrithvarma.github.io/" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Dr. Tanmai A. V. Ayenampudi — Portfolio" />
-  <meta name="twitter:description" content="Medical Doctor | Aspiring Pediatric Cardiac Surgeon | Founder of Saviere | Hyderabad, India" />
-
-  <!-- Styles -->
-  <style>
-    :root {
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      line-height: 1.6;
-      --accent: #2b6cb0;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      background: #fdfdfd;
-      color: #111;
-    }
-    .wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 32px 20px;
-    }
-    header {
-      text-align: center;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #eee;
-    }
-    header h1 {
-      font-size: 1.8rem;
-      margin: 0;
-      color: var(--accent);
-    }
-    header p {
-      color: #444;
-      font-size: 1.05rem;
-      margin: 6px 0 0;
-    }
-    .section {
-      margin: 36px 0;
-    }
-    .section h2 {
-      font-size: 1.3rem;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .links a {
-      display: inline-block;
-      margin: 6px 10px 6px 0;
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 16px;
-    }
-    .card {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 18px;
-      background: #fafafa;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #eee;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrapper">
-    <header>
-      <h1>Dr. Tanmai Aasrith Varma Ayenampudi</h1>
-      <p>Medical Doctor | Aspiring Pediatric Cardiac Surgeon | Founder of Saviere</p>
-      <p><em>Hyderabad, India</em></p>
-    </header>
-
-    <section class="section">
-      <h2>About</h2>
-      <p>
-        Born in Visakhapatnam, India. Currently based in Hyderabad.  
-        I am a medical doctor with aspirations to specialize in pediatric cardiac surgery.  
-        Alongside my medical journey, I founded <strong>Saviere</strong>, a sustainable vegan luxury fashion brand.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Connect</h2>
-      <div class="links">
-        <a href="https://github.com/aasrithvarma" target="_blank">GitHub</a>
-        <a href="http://linkedin.com/in/aasrithvarma/" target="_blank">LinkedIn</a>
-        <a href="https://instagram.com/aviesgram" target="_blank">Instagram</a>
-        <a href="http://researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" target="_blank">ResearchGate</a>
-        <a href="http://orcid.org/0000-0002-9581-7480" target="_blank">ORCID</a>
-        <a href="mailto:dr.avie@outlook.com">Email</a>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Projects & Work</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Saviere</h3>
-          <p>Sustainable, vegan, eco-conscious luxury fashion brand. Focused on upcycled denim, fabric accessories, and slow design collections.</p>
-        </div>
-        <div class="card">
-          <h3>Medical Research</h3>
-          <p>Active on ResearchGate and ORCID with focus on medicine, surgery, and pediatric cardiology interests.</p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Tanmai Aasrith Varma Ayenampudi · Built with ♥ · <a href="https://aasrithvarma.github.io/">aasrithvarma.github.io</a>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- JSON-LD Person Schema -->
   <script type="application/ld+json">
@@ -148,14 +17,9 @@
     "@id": "https://aasrithvarma.github.io/#person",
     "name": "Dr. Tanmai Aasrith Varma Ayenampudi",
     "alternateName": "Tanmai",
-    "description": "Medical Doctor, Aspiring Pediatric Cardiac Surgeon, Founder of Saviere. Based in Hyderabad, India.",
+    "description": "Medical Doctor, Aspiring Pediatric Cardiac Surgeon, Author of 'The Power of 77'. Based in Hyderabad, India.",
     "url": "https://aasrithvarma.github.io/",
-    "jobTitle": "Medical Doctor; Aspiring Pediatric Cardiac Surgeon; Founder of Saviere",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Saviere",
-      "url": "https://aasrithvarma.github.io/"
-    },
+    "jobTitle": "Medical Doctor; Aspiring Pediatric Cardiac Surgeon; Author",
     "birthPlace": {
       "@type": "Place",
       "name": "Visakhapatnam, India"
@@ -165,9 +29,98 @@
       "http://linkedin.com/in/aasrithvarma/",
       "https://instagram.com/aviesgram",
       "http://researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi",
-      "http://orcid.org/0000-0002-9581-7480"
+      "http://orcid.org/0000-0002-9581-7480",
+      "https://www.goodreads.com/author/show/48487387.Tanmai_Aasrith_Varma_Ayenampudi"
     ]
   }
   </script>
+
+  <!-- JSON-LD Book Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "@id": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
+    "name": "The Power of 77",
+    "author": {
+      "@type": "Person",
+      "@id": "https://aasrithvarma.github.io/#person"
+    },
+    "url": "https://www.goodreads.com/book/show/166387260-the-power-of-77",
+    "sameAs": [
+      "https://www.goodreads.com/book/show/166387260-the-power-of-77"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Goodreads"
+    }
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+  <!-- Container -->
+  <div class="max-w-4xl mx-auto px-6 py-12">
+
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-2">Dr. Tanmai Aasrith Varma Ayenampudi</h1>
+      <p class="text-lg text-gray-600">Medical Doctor • Aspiring Pediatric Cardiac Surgeon • Author of <em>The Power of 77</em></p>
+    </header>
+
+    <!-- About -->
+    <section class="bg-white rounded-2xl shadow p-6 mb-10">
+      <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+      <p>
+        I am a medical doctor from Hyderabad, India, with aspirations of becoming a pediatric cardiac surgeon.  
+        Alongside my medical career, I am deeply passionate about sustainable living, writing, and design.  
+        My debut book, <em>The Power of 77</em>, reflects my journey in thought, discipline, and self-discovery.
+      </p>
+    </section>
+
+    <!-- Work / Aspirations -->
+    <section class="bg-white rounded-2xl shadow p-6 mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Aspirations</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Advance pediatric cardiac surgery and improve access to healthcare in India.</li>
+        <li>Continue writing and contributing to literature that inspires growth and reflection.</li>
+        <li>Promote sustainable, vegan, and eco-conscious lifestyles through thoughtful design.</li>
+        <li>Travel, learn languages, and explore diverse cultures to broaden global perspectives.</li>
+      </ul>
+    </section>
+
+    <!-- Book -->
+    <section class="bg-white rounded-2xl shadow p-6 mb-10">
+      <h2 class="text-2xl font-semibold mb-4">My Book</h2>
+      <p class="mb-4">
+        <strong><em>The Power of 77</em></strong> is a personal exploration of discipline, thought, and the patterns that shape our lives.  
+        It encourages readers to reflect and find meaning in everyday actions.
+      </p>
+      <a href="https://www.goodreads.com/book/show/166387260-the-power-of-77"
+         target="_blank"
+         class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-lg shadow hover:bg-indigo-700 transition">
+         View on Goodreads
+      </a>
+    </section>
+
+    <!-- Contact & Links -->
+    <section class="bg-white rounded-2xl shadow p-6 mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Connect</h2>
+      <ul class="space-y-2">
+        <li><a href="mailto:dr.avie@outlook.com" class="text-indigo-600 hover:underline">dr.avie@outlook.com</a></li>
+        <li><a href="https://github.com/aasrithvarma" class="text-indigo-600 hover:underline">GitHub</a></li>
+        <li><a href="http://linkedin.com/in/aasrithvarma/" class="text-indigo-600 hover:underline">LinkedIn</a></li>
+        <li><a href="https://instagram.com/aviesgram" class="text-indigo-600 hover:underline">Instagram</a></li>
+        <li><a href="http://researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" class="text-indigo-600 hover:underline">ResearchGate</a></li>
+        <li><a href="http://orcid.org/0000-0002-9581-7480" class="text-indigo-600 hover:underline">ORCID</a></li>
+        <li><a href="https://www.goodreads.com/author/show/48487387.Tanmai_Aasrith_Varma_Ayenampudi" class="text-indigo-600 hover:underline">Goodreads Author</a></li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 mt-12">
+      <p>© 2025 Dr. Tanmai Aasrith Varma Ayenampudi</p>
+    </footer>
+  </div>
 </body>
 </html>
