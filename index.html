@@ -10,7 +10,7 @@
   <meta name="google-site-verification" content="NCgLaosh9QCvhZOHpU-zcLMkpYRAnV9BRae58DoSP2M" />
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <!-- Styling -->
@@ -19,27 +19,28 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       background: #fdfdfd;
-      color: #222;
-      line-height: 1.6;
+      color: #333;
+      line-height: 1.7;
     }
     header {
-      background: #8B0000; /* Premium Red */
-      color: white;
-      padding: 2rem;
       text-align: center;
-      border-bottom-left-radius: 2rem;
-      border-bottom-right-radius: 2rem;
+      padding: 2.5rem 1rem;
+      background: #f8f9fa;
+      border-bottom: 1px solid #eee;
     }
     header h1 {
       margin: 0;
       font-size: 2.2rem;
+      color: #0A2E73; /* Dark Blue for name */
+      font-weight: 600;
     }
     header p {
       margin: 0.5rem 0 0;
       font-size: 1.1rem;
+      color: #555;
     }
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       max-width: 900px;
       margin: auto;
     }
@@ -47,47 +48,60 @@
       margin-bottom: 2.5rem;
     }
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
-      color: #8B0000;
+      color: #0A2E73;
       border-bottom: 2px solid #8B0000;
       display: inline-block;
       padding-bottom: 0.25rem;
+      font-weight: 600;
     }
     .card {
       background: #fff;
       border-radius: 1rem;
       padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
       margin-bottom: 1rem;
     }
     .contact-links {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 1rem;
     }
     .contact-links a {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: #8B0000;
+      background: #8B0000; /* premium red accent */
       color: white;
       padding: 0.6rem 1rem;
       border-radius: 0.8rem;
       text-decoration: none;
       transition: background 0.3s;
+      font-size: 0.95rem;
     }
     .contact-links a:hover {
       background: #a40000;
     }
     footer {
       text-align: center;
-      padding: 1.5rem;
-      background: #111;
-      color: #ddd;
+      padding: 1.8rem 1rem;
+      background: #0A2E73;
+      color: #eee;
       margin-top: 2rem;
-      border-top-left-radius: 2rem;
-      border-top-right-radius: 2rem;
+    }
+    footer .social-icons {
+      margin-bottom: 0.8rem;
+    }
+    footer .social-icons a {
+      margin: 0 0.5rem;
+      color: #eee;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #ff6f6f; /* light red hover */
     }
   </style>
 
@@ -190,7 +204,13 @@
   </main>
 
   <footer>
-    <p>© 2025 Dr. Tanmai Aasrith Varma Ayenampudi | Built with ❤️ in Hyderabad</p>
+    <div class="social-icons">
+      <a href="https://github.com/aasrithvarma" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/aasrithvarma/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/aviesgram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:dr.avie@outlook.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+    <p>© 2025 Dr. Tanmai Aasrith Varma Ayenampudi</p>
   </footer>
 </body>
 </html>
