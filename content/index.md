@@ -14,22 +14,16 @@ This platform serves as a permanent archive of my clinical methodologies, peer-r
 
 ---
 
-<div class="card">
-<h3>Academic Focus</h3>
-<ul>
-<li><strong>Pediatric Cardiac Surgery & Congenital Heart Disease:</strong> Delivering precise, patient-centered care and mastering complex clinical challenges.</li>
-<li><strong>Cardiovascular Sciences & Medical Artificial Intelligence:</strong> Bridging the gap between physiological data and computational diagnostic tools.</li>
-<li><strong>Medical Education & Leadership:</strong> Extensive history of European and national capacity building within medical student associations.</li>
-</ul>
-</div>
+## Academic Focus
 
-<div class="card">
-<h3>Recent Trajectory</h3>
-<ul>
-<li><strong>Current Focus:</strong> Intensive preparation for advanced professional medical examinations and exploring entrepreneurial ventures in the digital health space.</li>
-<li><strong>Clinical:</strong> Successfully completed a 12-month rotatory internship at Rajiv Gandhi Institute of Medical Sciences (RIMS) across major clinical disciplines.</li>
-<li><strong>Publication:</strong> Author of <em>The Power of 77</em>, detailing foundational medical and personal philosophies.</li>
-</ul>
-</div>
+*   **Pediatric Cardiac Surgery & Congenital Heart Disease:** Delivering precise, patient-centered care and mastering complex clinical challenges.
+*   **Cardiovascular Sciences & Medical Artificial Intelligence:** Bridging the gap between physiological data and computational diagnostic tools.
+*   **Medical Education & Leadership:** Extensive history of European and national capacity building within medical student associations.
 
-[Read Full Biography](/biography/) | [View Full Curriculum Vitae](/cv/) | [Explore Clinical Experience](/clinical-experience/)
+## Recent Trajectory
+
+*   **Current Focus:** Intensive preparation for advanced professional medical examinations and exploring entrepreneurial ventures in the digital health space.
+*   **Clinical:** Successfully completed a 12-month rotatory internship at Rajiv Gandhi Institute of Medical Sciences (RIMS) across major clinical disciplines.
+*   **Publication:** Author of *The Power of 77*, detailing foundational medical and personal philosophies.
+
+[Read Full Biography](/biography/) | [View Full Curriculum Vitae](/cv/)

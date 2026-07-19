@@ -10,8 +10,8 @@ A comprehensive timeline of clinical exposure across tertiary healthcare systems
 
 ---
 
-<div class="card">
-<span class="timeline-date">June 2025 – June 2026</span>
+<div class="academic-entry">
+<span class="date">June 2025 – June 2026</span>
 <h3>Rajiv Gandhi Institute of Medical Sciences (RIMS), Adilabad</h3>
 <strong>Compulsory Rotatory Intern</strong>
 <ul>
@@ -21,8 +21,8 @@ A comprehensive timeline of clinical exposure across tertiary healthcare systems
 </ul>
 </div>
 
-<div class="card">
-<span class="timeline-date">Feb 2025 – June 2025</span>
+<div class="academic-entry">
+<span class="date">Feb 2025 – June 2025</span>
 <h3>Krishna Institute of Medical Sciences (KIMS), Hyderabad</h3>
 <strong>Duty Medical Officer</strong>
 <ul>
@@ -32,8 +32,8 @@ A comprehensive timeline of clinical exposure across tertiary healthcare systems
 </ul>
 </div>
 
-<div class="card">
-<span class="timeline-date">May 2022 – Aug 2022</span>
+<div class="academic-entry">
+<span class="date">May 2022 – Aug 2022</span>
 <h3>Apollo Hospitals (Apollo Health City), Hyderabad</h3>
 <strong>Clinical Observer (Gastroenterology)</strong>
 <ul>
