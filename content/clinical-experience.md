@@ -6,27 +6,38 @@ type: "page"
 
 # Clinical Experience
 
-A comprehensive timeline of clinical exposure across international and domestic healthcare systems.
+A comprehensive timeline of clinical exposure across tertiary healthcare systems, focusing on acute care, multidisciplinary management, and complex diagnostic procedures.
 
-## Compulsory Rotatory Internship (12 Months)
-**Rajiv Gandhi Institute of Medical Sciences (RIMS), Adilabad**
-Provided primary care, acute emergency management, and procedural assistance across the following disciplines:
-*   Internal Medicine
-*   General Surgery
-*   Emergency Medicine
-*   Paediatrics
-*   Orthopaedics
-*   Anaesthesiology
-*   Obstetrics & Gynaecology
-*   Community Medicine
+---
 
-## Tertiary Care Exposure
-**KIMS Hospitals, Hyderabad**
-Observation and training within a high-volume, multi-specialty tertiary care hospital, focusing on complex multidisciplinary case management and surgical observation.
+<div class="card">
+<span class="timeline-date">June 2025 – June 2026</span>
+<h3>Krishna Institute of Medical Sciences (KIMS), Hyderabad</h3>
+<strong>Duty Medical Officer</strong>
+<ul>
+<li>Provided inpatient and emergency medical care, including assessment, diagnosis, and stabilization[cite: 1].</li>
+<li>Managed medical emergencies, performed routine bedside procedures, and initiated evidence-based treatments[cite: 1].</li>
+<li>Collaborated with multidisciplinary teams to ensure accurate clinical documentation and adherence to hospital protocols[cite: 1].</li>
+</ul>
+</div>
 
-## International Medical Education
-**Progress Medical University, Armenia**
-Completion of core clinical rotations and attainment of Doctor of Medicine degree.
+<div class="card">
+<span class="timeline-date">February 2025 – June 2025</span>
+<h3>Rajiv Gandhi Institute of Medical Sciences (RIMS), Adilabad</h3>
+<strong>Compulsory Rotatory Intern</strong>
+<ul>
+<li>Conducted patient evaluation, diagnosis, and management across General Medicine, General Surgery, Paediatrics, Emergency Medicine, and Anaesthesiology[cite: 1].</li>
+<li>Performed routine clinical procedures including venepuncture, IV cannulation, suturing, wound care, and basic emergency care[cite: 1].</li>
+<li>Recognized by supervising clinicians for rapid learning, efficient procedural skills, and strong clinical reasoning[cite: 1].</li>
+</ul>
+</div>
 
-**Vinnytsia National Pirogov Memorial Medical University, Ukraine**
-Foundational basic sciences and early clinical exposure.
+<div class="card">
+<span class="timeline-date">May 2022 – August 2022</span>
+<h3>Apollo Hospitals (Apollo Health City), Hyderabad</h3>
+<strong>Clinical Observer (Gastroenterology)</strong>
+<ul>
+<li>Gained hands-on experience in diagnostic and therapeutic endoscopic procedures (ERCP, EUS, colonoscopy, fibroscan)[cite: 1].</li>
+<li>Observed the clinical application of gastrointestinal pharmacology and the management of hepatic diseases[cite: 1].</li>
+</ul>
+</div>

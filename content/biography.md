@@ -6,16 +6,16 @@ type: "page"
 
 # Biography
 
-Dr. Tanmai Aasrith Varma Ayenampudi is an international medical graduate with an uncompromising focus on pediatric cardiac surgery. Born in Visakhapatnam and raised in Hyderabad, his cross-continental medical education has forged a highly adaptable and resilient clinical foundation.
+Dr. Tanmai Aasrith Varma Ayenampudi is a physician with an uncompromising focus on pediatric cardiac surgery[cite: 1]. Born in Visakhapatnam and currently based in Hyderabad, his cross-continental medical education has forged a highly adaptable, detail-oriented, and resilient clinical foundation[cite: 1].
 
 ## Academic & Clinical Background
 
-His medical training commenced at Vinnytsia National Pirogov Memorial Medical University in Ukraine and was subsequently completed at Progress Medical University in Armenia. This unique trajectory provided vast exposure to varying international healthcare protocols and diverse patient demographics.
+His medical training commenced at **Vinnytsia National Medical University** in Ukraine and culminated at **Progress Medical University** in Armenia, where he graduated with an exceptional final examination score of 96%[cite: 1]. This unique trajectory provided vast exposure to varying international healthcare protocols and diverse patient demographics.
 
-Returning to India, he gained extensive observation experience at KIMS Hospitals, Hyderabad, a premier tertiary care center, which solidified his interest in complex surgical interventions. This was followed by a 12-month compulsory rotatory internship at Rajiv Gandhi Institute of Medical Sciences (RIMS), Adilabad, establishing a robust foundation in general medicine and surgical disciplines.
+Returning to India, he completed a rigorous compulsory rotatory internship at **Rajiv Gandhi Institute of Medical Sciences (RIMS)** in Adilabad, mastering patient evaluation and emergency management across major specialties[cite: 1]. He subsequently served as a Duty Medical Officer at **Krishna Institute of Medical Sciences (KIMS)** in Hyderabad, focusing on emergency stabilization and multidisciplinary collaboration[cite: 1].
 
-## Philosophy
+## Leadership & Advocacy
 
-Dr. Ayenampudi believes that surgical precision must be paired with data-driven clinical foresight. He actively researches the intersection of cardiovascular physiology and medical AI, aiming to develop tools that enhance surgical outcomes for congenital heart defects without compromising the interpretability of clinical decision-making.
+Dr. Ayenampudi has consistently held prominent leadership roles. Within the **European Medical Students' Association (EMSA)**, he served as a Local Coordinator, National Capacity Officer for Ukraine, and Assistant to the Vice President of Internal Affairs in Brussels[cite: 1]. 
 
-Outside of medicine, he is an advocate for environmental sustainability, healthcare accessibility, and veganism, frequently applying his understanding of exercise physiology to endurance running.
+Beyond the hospital, he is a dedicated advocate for environmental sustainability, children's rights, global literacy, and veganism[cite: 1]. He is also the founder of **Savière**, a brand promoting ethical consumption, and **Trip Nous**, a digital branding firm[cite: 1].
