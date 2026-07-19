@@ -95,6 +95,24 @@ body {
 }
 
 /* ==========================================================================
+   Profile Photo Layout
+   ========================================================================== */
+.profile-photo {
+  width: 220px;
+  height: auto;
+  float: left;
+  margin: 0.5rem 2rem 1.5rem 0;
+  border: 1px solid var(--univ-border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* ==========================================================================
    Typography & Main Content
    ========================================================================== */
 .site-main {
@@ -194,33 +212,41 @@ hr {
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .univ-nav { margin: 0; padding: 0; }
-  .univ-nav ul { flex-direction: column; }
-  .univ-nav a { padding: 1rem; border-bottom: 1px solid #444; }
-  .header-container { padding: 0 1.5rem; }
-  .site-main { padding: 2rem 1.5rem; }
-}
-
 /* ==========================================================================
-   Profile Photo Layout
+   Mobile Responsiveness & Swipe Navigation
    ========================================================================== */
-.profile-photo {
-  width: 220px;
-  height: auto;
-  float: left;
-  margin: 0.5rem 2rem 1.5rem 0;
-  border: 1px solid var(--univ-border);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 @media (max-width: 768px) {
+  .univ-header { padding: 1.5rem 0 0 0; }
+  .header-container { padding: 0 1.5rem; }
+  .header-titles { margin-bottom: 1.5rem; }
+  .faculty-name { font-size: 1.4rem; }
+  
+  /* Horizontal swipeable navigation for mobile */
+  .univ-nav {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .univ-nav::-webkit-scrollbar { display: none; /* Safari and Chrome */ }
+  
+  .univ-nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: max-content;
+    padding: 0 1rem;
+  }
+  
+  .univ-nav a {
+    padding: 0.8rem 1rem;
+    white-space: nowrap;
+    border: none;
+    font-size: 0.8rem;
+  }
+  
+  .site-main { padding: 2rem 1.5rem; }
+  
   .profile-photo {
     float: none;
     display: block;
