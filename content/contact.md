@@ -20,6 +20,7 @@ For academic correspondence, research collaborations, or clinical inquiries, ple
 <div class="card">
 <h3>Professional Profiles</h3>
 <ul>
+<li><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi" target="_blank" rel="noopener noreferrer">Tanmai Aasrith Varma Ayenampudi</a></li>
 <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aasrithvarma/" target="_blank" rel="noopener noreferrer">aasrithvarma</a></li>
 <li><strong>ORCID:</strong> <a href="https://orcid.org/0000-0002-9581-7480" target="_blank" rel="noopener noreferrer">0000-0002-9581-7480</a></li>
 <li><strong>GitHub:</strong> <a href="https://github.com/aasrithvarma" target="_blank" rel="noopener noreferrer">aasrithvarma</a></li>
