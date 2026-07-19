@@ -1,6 +1,6 @@
 ---
 title: "Now"
-description: "Current focus of Dr. Tanmai Aasrith Varma Ayenampudi."
+description: "Current focus, clinical roles, and active projects."
 type: "page"
 ---
 
@@ -8,11 +8,19 @@ type: "page"
 
 *Updated: July 2026*
 
-**Clinical Pursuits**
-Preparing for advanced surgical examinations and structuring applications for sub-specialty pediatric cardiac surgery training.
+This page serves as a public declaration of my current clinical, academic, and intellectual priorities.
 
-**Research Pursuits**
-Aggregating datasets for a comparative study on digital health interventions in post-operative pediatric cardiac care.
+<div class="card">
+<h3>Current Clinical Role</h3>
+Currently serving as a <strong>Duty Medical Officer at Krishna Institute of Medical Sciences (KIMS)</strong> in Hyderabad (June 2025 – June 2026). My primary focus is providing inpatient and emergency medical care, stabilizing patients, and collaborating with multidisciplinary teams[cite: 1].
+</div>
 
-**Personal Disciplines**
-Endurance running and maintaining a rigorous focus on exercise physiology.
+<div class="card">
+<h3>Entrepreneurial Focus</h3>
+Scaling <strong>Savière</strong>, a brand prioritizing sustainability, ethical consumption, and health education[cite: 1]. Simultaneously directing brand identity and web design initiatives through <strong>Trip Nous</strong>[cite: 1].
+</div>
+
+<div class="card">
+<h3>Personal Disciplines</h3>
+Maintaining a rigorous focus on advocacy for environmental sustainability, animal rights, and global literacy[cite: 1]. Continuing to study science-related literature (particularly aviation), world history, and geo-politics[cite: 1].
+</div>

@@ -13,6 +13,6 @@ The surgical correction of congenital heart defects represents one of the most m
 
 Herein lies the critical necessity for Medical Artificial Intelligence (AI).
 
-AI in this context must not be viewed as an autonomous decision-maker, but rather as an advanced sensory extension of the surgical and intensive care teams. By utilizing interpretable machine learning models, we can achieve predictive risk stratification for complications such as Low Cardiac Output Syndrome (LCOS) hours before clinical deterioration manifests. 
+AI in this context must not be viewed as an autonomous decision-maker, but rather as an advanced sensory extension of the surgical and intensive care teams. By utilizing interpretable machine learning models, we can achieve predictive risk stratification for complications hours before clinical deterioration manifests. 
 
 The future of our discipline relies on surgeons who are as fluent in data science and algorithmic logic as they are in anatomy and cardiopulmonary bypass physiology.
