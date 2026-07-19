@@ -26,10 +26,10 @@ This platform serves as a permanent archive of my clinical methodologies, peer-r
 <div class="card">
 <h3>Recent Trajectory</h3>
 <ul>
-<li><strong>Current Focus:</strong> Intensive preparation for advanced professional medical examinations and exploring new entrepreneurial ventures.</li>
-<li><strong>Clinical:</strong> Recently completed tenure as Duty Medical Officer at Krishna Institute of Medical Sciences (KIMS), managing emergencies and multidisciplinary care.</li>
+<li><strong>Current Focus:</strong> Intensive preparation for advanced professional medical examinations and exploring entrepreneurial ventures in the digital health space.</li>
+<li><strong>Clinical:</strong> Successfully completed a 12-month rotatory internship at Rajiv Gandhi Institute of Medical Sciences (RIMS) across major clinical disciplines.</li>
 <li><strong>Publication:</strong> Author of <em>The Power of 77</em>, detailing foundational medical and personal philosophies.</li>
 </ul>
 </div>
 
-[Read Full Biography](/biography/) | [Explore Clinical Experience](/clinical-experience/)
+[Read Full Biography](/biography/) | [View Full Curriculum Vitae](/cv/) | [Explore Clinical Experience](/clinical-experience/)

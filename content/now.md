@@ -8,11 +8,11 @@ type: "page"
 
 *Updated: July 2026*
 
-This page serves as a public declaration of my current clinical, academic, and intellectual priorities.
+This page serves as a public declaration of my current academic and intellectual priorities.
 
 <div class="card">
-<h3>Current Focus: Professional Examinations & Ventures</h3>
-Following the successful completion of my tenure as a Duty Medical Officer at Krishna Institute of Medical Sciences (KIMS), I am currently dedicating my time to rigorous preparation for advanced professional medical examinations. Simultaneously, I am actively exploring and conceptualizing new entrepreneurial ventures within the digital health space.
+<h3>Professional Examinations & Ventures</h3>
+I am currently dedicating my full time to rigorous preparation for advanced professional medical examinations. Simultaneously, I am actively exploring and conceptualizing new entrepreneurial ventures within the digital health and branding space.
 </div>
 
 <div class="card">
