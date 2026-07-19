@@ -1,6 +1,6 @@
 ---
 title: "Now"
-description: "Current focus, clinical roles, and active projects."
+description: "Current focus, exam preparation, and active projects."
 type: "page"
 ---
 
@@ -11,16 +11,16 @@ type: "page"
 This page serves as a public declaration of my current clinical, academic, and intellectual priorities.
 
 <div class="card">
-<h3>Current Clinical Role</h3>
-Currently serving as a <strong>Duty Medical Officer at Krishna Institute of Medical Sciences (KIMS)</strong> in Hyderabad (June 2025 – June 2026). My primary focus is providing inpatient and emergency medical care, stabilizing patients, and collaborating with multidisciplinary teams[cite: 1].
+<h3>Current Focus: Professional Examinations & Ventures</h3>
+Following the successful completion of my tenure as a Duty Medical Officer at Krishna Institute of Medical Sciences (KIMS), I am currently dedicating my time to rigorous preparation for advanced professional medical examinations. Simultaneously, I am actively exploring and conceptualizing new entrepreneurial ventures within the digital health space.
 </div>
 
 <div class="card">
 <h3>Entrepreneurial Focus</h3>
-Scaling <strong>Savière</strong>, a brand prioritizing sustainability, ethical consumption, and health education[cite: 1]. Simultaneously directing brand identity and web design initiatives through <strong>Trip Nous</strong>[cite: 1].
+Scaling <strong>Savière</strong>, a brand prioritizing sustainability, ethical consumption, and health education. I am also directing brand identity and web design initiatives through <strong>Trip Nous</strong>.
 </div>
 
 <div class="card">
 <h3>Personal Disciplines</h3>
-Maintaining a rigorous focus on advocacy for environmental sustainability, animal rights, and global literacy[cite: 1]. Continuing to study science-related literature (particularly aviation), world history, and geo-politics[cite: 1].
+Maintaining a rigorous focus on advocacy for environmental sustainability, animal rights, and global literacy. Continuing to study science-related literature (particularly aviation), world history, and geo-politics.
 </div>
