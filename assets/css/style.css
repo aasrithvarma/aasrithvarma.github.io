@@ -201,3 +201,31 @@ hr {
   .header-container { padding: 0 1.5rem; }
   .site-main { padding: 2rem 1.5rem; }
 }
+
+/* ==========================================================================
+   Profile Photo Layout
+   ========================================================================== */
+.profile-photo {
+  width: 220px;
+  height: auto;
+  float: left;
+  margin: 0.5rem 2rem 1.5rem 0;
+  border: 1px solid var(--univ-border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media (max-width: 768px) {
+  .profile-photo {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 2rem auto;
+  }
+}

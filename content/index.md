@@ -6,11 +6,15 @@ type: "page"
 
 # Dr. Tanmai Aasrith Varma Ayenampudi, M.D.
 
-**Physician | Researcher | Aspiring Pediatric Cardiac Surgeon**
+<div class="clearfix">
+<img src="/assets/images/profile.jpg" alt="Dr. Tanmai Aasrith Varma Ayenampudi" class="profile-photo">
+
+**Physician | Aspiring Pediatric Cardiac Surgeon**
 
 Welcome to my academic digital identity. I am a physician dedicated to advancing pediatric cardiac care through precise, patient-centered clinical practice, surgical excellence, and the integration of medical artificial intelligence. 
 
 This platform serves as a permanent archive of my clinical methodologies, peer-reviewed research, and academic philosophies.
+</div>
 
 ---
 
