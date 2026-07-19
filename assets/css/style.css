@@ -112,3 +112,16 @@ hr { border: 0; border-top: 1px solid var(--univ-border); margin: 3rem 0; }
   .site-main { padding: 2rem 1.5rem; }
   .profile-photo { float: none; display: block; width: 100%; max-width: 260px; margin: 0 auto 2rem auto; }
 }
+
+/* Add this to the end of your CSS file, replacing the previous Mobile section */
+@media (max-width: 768px) {
+    .nav-toggle { display: block; background: var(--univ-red); color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; font-weight: 600; }
+    .univ-nav { display: none; position: absolute; left: 0; right: 0; background: var(--univ-charcoal); padding: 1rem; }
+    .univ-nav.active { display: block; }
+    .univ-nav ul { flex-direction: column; }
+    .univ-nav a { padding: 1rem; border-bottom: 1px solid #444; }
+    .header-container { display: flex; justify-content: space-between; align-items: center; }
+}
+@media (min-width: 769px) {
+    .nav-toggle { display: none; }
+}

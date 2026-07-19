@@ -4,18 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
-    <meta name="description" content="{{description}}">
-    <link rel="canonical" href="{{canonical}}">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="/assets/css/style.css">
-    
-    <script type="application/ld+json">
-        {{schema}}
-    </script>
 </head>
 <body>
     <header class="univ-header">
@@ -24,11 +13,14 @@
                 <a href="/" class="faculty-name">Dr. Tanmai Aasrith Varma Ayenampudi</a>
                 <span class="faculty-title">Physician &amp; Aspiring Pediatric Cardiac Surgeon</span>
             </div>
-            <nav class="univ-nav" aria-label="Main Navigation">
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">Menu</button>
+            
+            <nav class="univ-nav" id="navMenu">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/biography/">Biography</a></li>
-                    <li><a href="/cv/">Curriculum Vitae</a></li>
+                    <li><a href="/cv/">CV</a></li>
                     <li><a href="/clinical-experience/">Clinical</a></li>
                     <li><a href="/now/">Now</a></li>
                 </ul>
@@ -36,20 +28,15 @@
         </div>
     </header>
 
-    <main class="container site-main" id="main-content">
-        <article class="document-content">
-            {{content}}
-        </article>
-    </main>
+    <main class="container site-main"><article class="document-content">{{content}}</article></main>
 
-    <footer class="univ-footer">
-        <div class="container">
-            <nav class="footer-links">
-                <a href="/education/">Education</a>
-                <a href="/contact/">Contact &amp; Profiles</a>
-            </nav>
-            <p>&copy; {{current_year}} Dr. Tanmai Aasrith Varma Ayenampudi. All rights reserved.</p>
-        </div>
-    </footer>
+    <script>
+        const toggle = document.getElementById('navToggle');
+        const menu = document.getElementById('navMenu');
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggle.textContent = menu.classList.contains('active') ? 'Close' : 'Menu';
+        });
+    </script>
 </body>
 </html>
