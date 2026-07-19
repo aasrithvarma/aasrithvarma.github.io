@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="theme-color" content="#081C3A">
+    <link rel="canonical" href="{{canonical}}">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:url" content="{{canonical}}">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script type="application/ld+json">{{schema}}</script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header class="site-header" role="banner">
+        <div class="container nav-wrapper">
+            <a href="/" class="brand" aria-label="Home">Dr. Ayenampudi</a>
+            <nav aria-label="Main Navigation" class="main-nav">
+                <ul>
+                    <li><a href="/biography/">Biography</a></li>
+                    <li><a href="/clinical-experience/">Clinical</a></li>
+                    <li><a href="/research/">Research</a></li>
+                    <li><a href="/publications/">Publications</a></li>
+                    <li><a href="/now/">Now</a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <button id="searchBtn" class="btn-icon" aria-label="Open Search">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark Mode">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="container site-main" id="main-content" role="main">
+        <article class="content-wrapper">
+            {{content}}
+        </article>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-content">
+            <nav aria-label="Footer Navigation" class="footer-nav">
+                <a href="/cv/">CV</a>
+                <a href="/leadership/">Leadership</a>
+                <a href="/awards/">Awards</a>
+                <a href="/memberships/">Memberships</a>
+                <a href="/resources/">Resources</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+            <div class="footer-meta">
+                <p>&copy; {{current_year}} Dr. Tanmai Aasrith Varma Ayenampudi, M.D. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-label="Site Search" hidden>
+        <div class="search-content">
+            <div class="search-header">
+                <input type="search" id="searchInput" placeholder="Search..." aria-label="Search Input">
+                <button id="closeSearchBtn" class="btn-icon" aria-label="Close Search">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="searchResults" aria-live="polite"></div>
+        </div>
+    </div>
+    <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>
