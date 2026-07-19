@@ -6,10 +6,6 @@ type: "page"
 
 # Curriculum Vitae
 
-[Download Full CV (PDF)](#) *(PDF upload pending)*
-
----
-
 ## Certifications & Life Support
 *   **Basic Life Support (BLS)** — American Heart Association (Issued: April 21, 2026)
 *   **Pediatric Advanced Life Support (PALS)** — NHCPS (August 2023)
