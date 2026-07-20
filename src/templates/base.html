@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="NCgLaosh9QCvhZOHpU-zcLMkpYRAnV9BRae58DoSP2M" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
@@ -34,9 +33,6 @@
       ]
     }
     </script>
-
-    <!-- Calendly -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     <header class="univ-header">
@@ -72,18 +68,14 @@
         </div>
     </footer>
 
-    <!-- New Calendly Badge -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Cal floating-popup embed -->
     <script type="text/javascript">
-        window.onload = function() { 
-            Calendly.initBadgeWidget({ 
-                url: 'https://calendly.com/dr-avie/10?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=af1505', 
-                text: 'Schedule a Consultation', 
-                color: '#ac0000', 
-                textColor: '#ffffff', 
-                branding: true 
-            }); 
-        };
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "15min", {origin:"https://app.cal.com"});
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+      Cal.ns["15min"]("floatingButton", {"calLink":"dr-avie/consultation","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},"hideButtonIcon":false,"buttonText":"Book a Consultation","buttonColor":"#900c0c"}); 
+      Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
 
     <script>
