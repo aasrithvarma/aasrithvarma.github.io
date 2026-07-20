@@ -21,7 +21,7 @@ type: "page"
 
 ## Education
 **Doctor of Medicine (M.D.)**  
-*Progress Medical University, Armenia* | Oct 2022 – Oct 2025  
+*Progress University of Gyumri, Armenia* | Oct 2022 – September 2024
 Graduated with Final Examination score of 96%.
 
 **Doctor of Medicine (M.D.) — Foundational Years**  
