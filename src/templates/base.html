@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <meta name="google-site-verification" content="NCgLaosh9QCvhZOHpU-zcLMkpYRAnV9BRae58DoSP2M" />
     
     <!-- Professional Physician Schema -->
     <script type="application/ld+json">
@@ -34,6 +34,9 @@
       ]
     }
     </script>
+
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     <header class="univ-header">
@@ -69,18 +72,18 @@
         </div>
     </footer>
 
-    <!-- Calendly Scripts -->
+    <!-- New Calendly Badge -->
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script type="text/javascript">
-        window.addEventListener('load', function() {
+        window.onload = function() { 
             Calendly.initBadgeWidget({ 
-                url: 'https://calendly.com/dr-avie/30min', 
-                text: 'Schedule time with me', 
-                color: '#8c1515', 
+                url: 'https://calendly.com/dr-avie/10?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=af1505', 
+                text: 'Schedule a Consultation', 
+                color: '#ac0000', 
                 textColor: '#ffffff', 
                 branding: true 
-            });
-        });
+            }); 
+        };
     </script>
 
     <script>
