@@ -13,7 +13,7 @@ const CONFIG = {
   outDir: 'docs',
   templateDir: 'src/templates',
   assetsDir: 'assets',
-  osfProjectUrl: 'https://osf.io/YOUR_OSF_ID/' // <-- UPDATE THIS ID
+  osfProjectUrl: 'https://osf.io/rhs8g/' // <-- UPDATE THIS ID
 };
 
 if (!fs.existsSync(CONFIG.outDir)) fs.mkdirSync(CONFIG.outDir, { recursive: true });
