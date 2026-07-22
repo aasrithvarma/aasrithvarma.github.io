@@ -55,7 +55,7 @@ const generateSchema = (data, urlPath) => {
 files.forEach(file => {
   const content = fs.readFileSync(file, 'utf-8');
   const parsed = matter(content);
-  const htmlContent = marked(parsed.content);
+  let htmlContent = marked(parsed.content);
   
   let relativePath = path.relative(CONFIG.srcDir, file).replace(/\.md$/, '');
   let urlPath, outPath;
@@ -70,11 +70,27 @@ files.forEach(file => {
     urlPath = `/${relativePath}/`;
     outPath = path.join(CONFIG.outDir, relativePath, 'index.html');
     
-    // Extract metadata for the automated articles index
     if (relativePath.startsWith('articles/')) {
+      const articleDateObj = parsed.data.date ? new Date(parsed.data.date) : new Date(relativePath.match(/\d{4}-\d{2}-\d{2}/)?.[0] || Date.now());
+      const formattedDate = articleDateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const displayTitle = parsed.data.title || 'Untitled Clinical Update';
+      
+      // Inject Title and Date into the visible HTML
+      htmlContent = `
+        <article>
+          <header style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+            <h1 style="margin-bottom: 0.5rem; font-size: 2.2rem; color: #222;">${displayTitle}</h1>
+            <time style="color: #666; font-size: 0.95rem;">${formattedDate}</time>
+          </header>
+          <div class="article-body">
+            ${htmlContent}
+          </div>
+        </article>
+      `;
+
       articlesList.push({
-        title: parsed.data.title || 'Untitled',
-        date: parsed.data.date ? new Date(parsed.data.date) : new Date(relativePath.match(/\d{4}-\d{2}-\d{2}/)?.[0] || Date.now()),
+        title: displayTitle,
+        date: articleDateObj,
         url: urlPath
       });
     }
@@ -104,12 +120,11 @@ files.forEach(file => {
   }
 });
 
-// Compile and output the dynamic /articles/ index page
 articlesList.sort((a, b) => b.date - a.date);
-let articlesHtml = '<h1>Clinical Notebook</h1><p>Recent clinical updates, academic insights, and case reviews.</p><ul>';
+let articlesHtml = '<h1>Clinical Notebook</h1><p style="font-size: 1.1rem; color: #555;">Recent clinical updates, academic insights, and case reviews.</p><ul style="list-style-type: none; padding-left: 0;">';
 articlesList.forEach(article => {
   const dateString = article.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  articlesHtml += `<li style="margin-bottom: 15px;"><a href="${article.url}"><strong>${article.title}</strong></a><br><small>${dateString}</small></li>`;
+  articlesHtml += `<li style="margin-bottom: 1.5rem;"><a href="${article.url}" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">${article.title}</a><br><small style="color: #666;">${dateString}</small></li>`;
 });
 articlesHtml += '</ul>';
 
