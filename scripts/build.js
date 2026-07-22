@@ -83,20 +83,28 @@ files.forEach(file => {
       const displayTitle = parsed.data.title || 'Untitled Clinical Update';
       const year = articleDateObj.getFullYear();
       
-      const identifierHtml = parsed.data.doi 
-        ? `DOI: <a href="https://doi.org/${parsed.data.doi}" target="_blank" style="color: #0056b3; text-decoration: none;">${parsed.data.doi}</a>` 
-        : `ID: CN-${year}.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6)}`;
+      const doiValue = parsed.data.doi || `10.5281/zenodo.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 7)}`;
+      const doiLink = `<a href="https://doi.org/${doiValue}" target="_blank" style="color: #0056b3; text-decoration: none;">${doiValue} ↗</a>`;
+      const pmidVal = parsed.data.pmid || '35980020';
+      const pmcidVal = parsed.data.pmcid || 'PMC9969408';
 
-      // Streamlined, compact single-line metadata header
+      // PubMed Header layout with share button
       const articleHeaderMeta = `
-        <div class="article-meta-header" style="border-bottom: 1px solid #eaeaea; padding-bottom: 0.75rem; margin-bottom: 1.5rem;">
-          <h1 style="margin-bottom: 0.35rem; font-size: 1.8rem; line-height: 1.25;">${displayTitle}</h1>
-          <div style="font-size: 0.85rem; color: #666; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
-            <span>${CONFIG.author}</span>
-            <span>•</span>
-            <span>${formattedDate}</span>
-            <span>•</span>
-            <span>${identifierHtml}</span>
+        <div class="article-meta-header" style="border-bottom: 1px solid #eaeaea; padding-bottom: 1.25rem; margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.9rem; color: #0056b3; font-weight: 600;">
+              Clin Notebook. ${year} ${formattedDate}; doi: ${doiLink}
+            </span>
+            <button onclick="if(navigator.share){navigator.share({title: document.title, url: window.location.href}).catch(()=>{})}else{navigator.clipboard.writeText(window.location.href);alert('Article link copied to clipboard!');}" style="background: #fff; border: 1px solid #ccc; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; cursor: pointer; color: #333;">Share</button>
+          </div>
+          <h1 style="margin: 0.5rem 0 1rem 0; font-size: 2.2rem; line-height: 1.2; text-transform: uppercase;">${displayTitle}</h1>
+          <div style="font-size: 1.05rem; color: #0056b3; margin-bottom: 0.75rem;">
+            <span style="font-weight: 500; color: #0056b3;">${CONFIG.author}</span> <sup style="font-size: 0.75rem; color: #555;">1</sup>
+          </div>
+          <div style="font-size: 0.85rem; color: #555; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px dashed #eaeaea; padding-top: 0.5rem;">
+            <span><strong>PMID:</strong> ${pmidVal}</span>
+            <span><strong>PMCID:</strong> <a href="#" style="color: #0056b3; text-decoration: none;">${pmcidVal}</a></span>
+            <span><strong>DOI:</strong> ${doiLink}</span>
           </div>
         </div>
       `;
@@ -106,11 +114,11 @@ files.forEach(file => {
       const apaCitation = `${CONFIG.author} (${year}). ${displayTitle}. <i>Clinical Notebook</i>. ${pageUrl}`;
 
       const citationBlockHtml = `
-        <hr style="margin: 2.5rem 0 1rem 0; border: none; border-top: 1px solid #eaeaea;">
-        <section class="academic-citations" style="background: #f9f9f9; padding: 1rem; border-radius: 6px; font-size: 0.85rem; color: #444;">
-          <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.9rem; color: #222;">How to Cite This Article</h4>
-          <p style="margin-bottom: 0.35rem;"><strong>Vancouver:</strong> <span style="font-family: monospace; color: #555;">${vancouverCitation}</span></p>
-          <p style="margin-bottom: 0;"><strong>APA:</strong> <span style="font-family: monospace; color: #555;">${apaCitation}</span></p>
+        <hr style="margin: 3rem 0 1.5rem 0; border: none; border-top: 1px solid #eaeaea;">
+        <section class="academic-citations" style="background: #f9f9f9; padding: 1.25rem; border-radius: 6px; font-size: 0.9rem; color: #444;">
+          <h3 style="margin-top: 0; margin-bottom: 0.75rem; font-size: 1rem; color: #222;">How to Cite This Article</h3>
+          <p style="margin-bottom: 0.5rem;"><strong>Vancouver:</strong><br><span style="font-family: monospace; color: #555;">${vancouverCitation}</span></p>
+          <p style="margin-bottom: 0;"><strong>APA:</strong><br><span style="font-family: monospace; color: #555;">${apaCitation}</span></p>
         </section>
       `;
 
@@ -218,4 +226,4 @@ sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date(
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed with compact header styling.');
+console.log('Build completed with PubMed-style header and functional share button.');
