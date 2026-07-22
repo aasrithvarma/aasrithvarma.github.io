@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Metabolic Syndrome, Ac Silent Epidemic Destroying Hearts Before Symptoms Begin
+title: Metabolic Syndrome, A Silent Epidemic Destroying Hearts Before Symptoms Begin
 date: 2026-07-22T23:46
 ---
 
