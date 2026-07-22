@@ -79,26 +79,24 @@ files.forEach(file => {
     
     if (relativePath.startsWith('articles/')) {
       const articleDateObj = parsed.data.date ? new Date(parsed.data.date) : new Date(relativePath.match(/\d{4}-\d{2}-\d{2}/)?.[0] || Date.now());
-      const formattedDate = articleDateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const formattedDate = articleDateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
       const displayTitle = parsed.data.title || 'Untitled Clinical Update';
       const year = articleDateObj.getFullYear();
       
-      // Clean Identifier/DOI block (ensures no stray '>' artifacts)
       const identifierHtml = parsed.data.doi 
-        ? `<strong>DOI:</strong> <a href="https://doi.org/${parsed.data.doi}" target="_blank" style="color: #0056b3; text-decoration: none;">${parsed.data.doi}</a>` 
-        : `<strong>Identifier:</strong> CN-${year}.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6)}`;
+        ? `DOI: <a href="https://doi.org/${parsed.data.doi}" target="_blank" style="color: #0056b3; text-decoration: none;">${parsed.data.doi}</a>` 
+        : `ID: CN-${year}.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6)}`;
 
-      // Correctly structured article metadata header
+      // Streamlined, compact single-line metadata header
       const articleHeaderMeta = `
-        <div class="article-meta-header" style="border-bottom: 1px solid #eaeaea; padding-bottom: 1rem; margin-bottom: 2rem;">
-          <div style="font-size: 0.9rem; color: #555; margin-bottom: 0.75rem;">
-            ${identifierHtml}
-          </div>
-          <h1 style="margin-bottom: 0.5rem; font-size: 2.2rem; line-height: 1.2;">${displayTitle}</h1>
-          <div style="font-size: 0.95rem; color: #555; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
-            <span><strong>Author:</strong> ${CONFIG.author}</span>
+        <div class="article-meta-header" style="border-bottom: 1px solid #eaeaea; padding-bottom: 0.75rem; margin-bottom: 1.5rem;">
+          <h1 style="margin-bottom: 0.35rem; font-size: 1.8rem; line-height: 1.25;">${displayTitle}</h1>
+          <div style="font-size: 0.85rem; color: #666; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
+            <span>${CONFIG.author}</span>
             <span>•</span>
-            <span><strong>Published:</strong> ${formattedDate}</span>
+            <span>${formattedDate}</span>
+            <span>•</span>
+            <span>${identifierHtml}</span>
           </div>
         </div>
       `;
@@ -108,11 +106,11 @@ files.forEach(file => {
       const apaCitation = `${CONFIG.author} (${year}). ${displayTitle}. <i>Clinical Notebook</i>. ${pageUrl}`;
 
       const citationBlockHtml = `
-        <hr style="margin: 3rem 0 1.5rem 0; border: none; border-top: 1px solid #eaeaea;">
-        <section class="academic-citations" style="background: #f9f9f9; padding: 1.25rem; border-radius: 6px; font-size: 0.9rem; color: #444;">
-          <h3 style="margin-top: 0; margin-bottom: 0.75rem; font-size: 1rem; color: #222;">How to Cite This Article</h3>
-          <p style="margin-bottom: 0.5rem;"><strong>Vancouver:</strong><br><span style="font-family: monospace; color: #555;">${vancouverCitation}</span></p>
-          <p style="margin-bottom: 0;"><strong>APA:</strong><br><span style="font-family: monospace; color: #555;">${apaCitation}</span></p>
+        <hr style="margin: 2.5rem 0 1rem 0; border: none; border-top: 1px solid #eaeaea;">
+        <section class="academic-citations" style="background: #f9f9f9; padding: 1rem; border-radius: 6px; font-size: 0.85rem; color: #444;">
+          <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.9rem; color: #222;">How to Cite This Article</h4>
+          <p style="margin-bottom: 0.35rem;"><strong>Vancouver:</strong> <span style="font-family: monospace; color: #555;">${vancouverCitation}</span></p>
+          <p style="margin-bottom: 0;"><strong>APA:</strong> <span style="font-family: monospace; color: #555;">${apaCitation}</span></p>
         </section>
       `;
 
@@ -220,4 +218,4 @@ sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date(
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed cleanly; resolved stray ">" artifact.');
+console.log('Build completed with compact header styling.');
