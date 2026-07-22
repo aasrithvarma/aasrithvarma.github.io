@@ -13,7 +13,7 @@ const CONFIG = {
   outDir: 'docs',
   templateDir: 'src/templates',
   assetsDir: 'assets',
-  osfProjectUrl: 'https://osf.io/rhs8g/' // <-- UPDATE THIS ID
+  osfProjectUrl: 'https://osf.io/rhs8g/'
 };
 
 if (!fs.existsSync(CONFIG.outDir)) fs.mkdirSync(CONFIG.outDir, { recursive: true });
@@ -103,7 +103,6 @@ files.forEach(file => {
           </div>
           <div style="font-size: 0.85rem; color: #555; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px dashed #eaeaea; padding-top: 0.75rem; margin-top: 0.5rem;">
             <span><strong>CliN ID:</strong> ${clinId}</span>
-            <span><strong>Persistent Link:</strong> <a href="${pageUrl}" style="color: #0056b3; text-decoration: none;">${pageUrl}</a></span>
             ${osfBadgeHtml}
           </div>
         </div>
@@ -225,4 +224,4 @@ sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date(
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed with OSF integration badge.');
+console.log('Build completed cleanly without persistent link label.');
