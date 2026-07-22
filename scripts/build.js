@@ -7,6 +7,7 @@ import { marked } from 'marked';
 const CONFIG = {
   url: 'https://aasrithvarma.github.io',
   author: 'Dr. Tanmai Aasrith Varma Ayenampudi, M.D.',
+  publicationName: "Dr. Ayenampudi's Clinical Notebook",
   srcDir: 'content',
   outDir: 'docs',
   templateDir: 'src/templates',
@@ -33,7 +34,12 @@ const baseTemplate = fs.readFileSync(path.join(CONFIG.templateDir, 'base.html'),
 const files = globSync(`${CONFIG.srcDir}/**/*.md`);
 const searchIndex = [];
 const sitemap = [];
+const newsSitemapItems = [];
 const articlesList = [];
+const rssItems = [];
+
+const twoDaysAgo = new Date();
+twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
 
 const generateSchema = (data, urlPath) => {
   const type = data.type === 'publication' ? 'MedicalScholarlyArticle' : data.type === 'post' ? 'BlogPosting' : 'ProfilePage';
@@ -75,7 +81,6 @@ files.forEach(file => {
       const formattedDate = articleDateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
       const displayTitle = parsed.data.title || 'Untitled Clinical Update';
       
-      // Inject Title and Date into the visible HTML
       htmlContent = `
         <article>
           <header style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
@@ -91,8 +96,35 @@ files.forEach(file => {
       articlesList.push({
         title: displayTitle,
         date: articleDateObj,
-        url: urlPath
+        url: urlPath,
+        description: parsed.data.description || displayTitle
       });
+
+      rssItems.push(`
+        <item>
+          <title><![CDATA[${displayTitle}]]></title>
+          <link>${CONFIG.url}${urlPath}</link>
+          <guid>${CONFIG.url}${urlPath}</guid>
+          <pubDate>${articleDateObj.toUTCString()}</pubDate>
+          <description><![CDATA[${parsed.data.description || displayTitle}]]></description>
+        </item>
+      `);
+
+      // Google News Sitemaps rule: only include articles published within the last 2 days
+      if (articleDateObj >= twoDaysAgo) {
+        newsSitemapItems.push(`
+  <url>
+    <loc>${CONFIG.url}${urlPath}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>${CONFIG.publicationName}</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>${articleDateObj.toISOString()}</news:publication_date>
+      <news:title><![CDATA[${displayTitle}]]></news:title>
+    </news:news>
+  </url>`);
+      }
     }
   }
 
@@ -140,7 +172,30 @@ fs.mkdirSync(path.join(CONFIG.outDir, 'articles'), { recursive: true });
 fs.writeFileSync(path.join(CONFIG.outDir, 'articles', 'index.html'), articlesIndexHtml);
 sitemap.push(`<url><loc>${CONFIG.url}/articles/</loc><lastmod>${new Date().toISOString()}</lastmod></url>`);
 
+// Generate RSS Feed
+const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Clinical Notebook | ${CONFIG.author}</title>
+    <link>${CONFIG.url}/articles/</link>
+    <description>Recent clinical updates and medical insights.</description>
+    <language>en-us</language>
+    ${rssItems.join('')}
+  </channel>
+</rss>`;
+fs.writeFileSync(path.join(CONFIG.outDir, 'rss.xml'), rssXml);
+sitemap.push(`<url><loc>${CONFIG.url}/rss.xml</loc><lastmod>${new Date().toISOString()}</lastmod></url>`);
+
+// Generate Dedicated News Sitemap (news-sitemap.xml)
+const newsSitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${newsSitemapItems.join('')}
+</urlset>`;
+fs.writeFileSync(path.join(CONFIG.outDir, 'news-sitemap.xml'), newsSitemapXml);
+sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date().toISOString()}</lastmod></url>`);
+
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed.');
+console.log('Build completed with RSS and News Sitemap.');
