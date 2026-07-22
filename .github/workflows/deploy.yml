@@ -1,4 +1,4 @@
-name: Deploy Site
+name: Automated Zenodo DOI & Build
 
 on:
   push:
@@ -22,6 +22,7 @@ jobs:
       - name: Install dependencies & build site
         run: |
           npm install
+          rm -rf docs/*
           npm run build
 
       - name: Deploy to GitHub Pages
