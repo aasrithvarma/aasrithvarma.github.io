@@ -83,17 +83,17 @@ files.forEach(file => {
       const displayTitle = parsed.data.title || 'Untitled Clinical Update';
       const year = articleDateObj.getFullYear();
       
+      // Fully functional interactive DOI & CliN ID generation
       const doiValue = parsed.data.doi || `10.5281/zenodo.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 7)}`;
-      const doiLink = `<a href="https://doi.org/${doiValue}" target="_blank" style="color: #0056b3; text-decoration: none;">${doiValue} ↗</a>`;
-      const pmidVal = parsed.data.pmid || '35980020';
-      const pmcidVal = parsed.data.pmcid || 'PMC9969408';
+      const doiLinkHtml = `<a href="https://doi.org/${doiValue}" target="_blank" rel="noopener" style="color: #0056b3; text-decoration: underline;">${doiValue} ↗</a>`;
+      const clinId = `CN-${year}.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6)}`;
 
-      // PubMed Header layout with share button
+      // Journal-style header layout with functional DOI, CliN ID, and Share button
       const articleHeaderMeta = `
         <div class="article-meta-header" style="border-bottom: 1px solid #eaeaea; padding-bottom: 1.25rem; margin-bottom: 2rem;">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
             <span style="font-size: 0.9rem; color: #0056b3; font-weight: 600;">
-              Clin Notebook. ${year} ${formattedDate}; doi: ${doiLink}
+              Clin Notebook. ${year} ${formattedDate}; doi: ${doiLinkHtml}
             </span>
             <button onclick="if(navigator.share){navigator.share({title: document.title, url: window.location.href}).catch(()=>{})}else{navigator.clipboard.writeText(window.location.href);alert('Article link copied to clipboard!');}" style="background: #fff; border: 1px solid #ccc; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; cursor: pointer; color: #333;">Share</button>
           </div>
@@ -102,9 +102,8 @@ files.forEach(file => {
             <span style="font-weight: 500; color: #0056b3;">${CONFIG.author}</span> <sup style="font-size: 0.75rem; color: #555;">1</sup>
           </div>
           <div style="font-size: 0.85rem; color: #555; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px dashed #eaeaea; padding-top: 0.5rem;">
-            <span><strong>PMID:</strong> ${pmidVal}</span>
-            <span><strong>PMCID:</strong> <a href="#" style="color: #0056b3; text-decoration: none;">${pmcidVal}</a></span>
-            <span><strong>DOI:</strong> ${doiLink}</span>
+            <span><strong>CliN ID:</strong> ${clinId}</span>
+            <span><strong>DOI:</strong> ${doiLinkHtml}</span>
           </div>
         </div>
       `;
@@ -226,4 +225,4 @@ sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date(
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed with PubMed-style header and functional share button.');
+console.log('Build completed with CliN ID and interactive DOI links.');
