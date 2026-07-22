@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Institutional University Theme (Crimson & Charcoal)
+   ========================================================================== */
+:root {
+  --univ-red: #8C1515;       
+  --univ-charcoal: #2E2D29;  
+  --univ-grey: #555555;      
+  --univ-border: #E4E4E4;    
+  --univ-bg: #FFFFFF;        
+  --univ-bg-alt: #F9F9F9;    
+
+  --font-serif: 'Playfair Display', Times, serif;
+  --font-sans: 'Inter', Helvetica, Arial, sans-serif;
+  
+  --width-max: 1000px;
+  --width-reading: 760px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; background-color: var(--univ-bg-alt); }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--univ-charcoal);
+  background-color: var(--univ-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.univ-header {
+  border-top: 8px solid var(--univ-red);
+  background-color: var(--univ-bg-alt);
+  border-bottom: 1px solid var(--univ-border);
+  padding: 2.5rem 0 0 0;
+}
+
+.header-container { max-width: var(--width-max); margin: 0 auto; padding: 0 2rem; }
+.header-titles { margin-bottom: 2rem; }
+.faculty-name { display: block; font-family: var(--font-sans); font-size: 1.75rem; font-weight: 600; color: var(--univ-charcoal); text-decoration: none; letter-spacing: -0.02em; }
+.faculty-title { display: block; font-family: var(--font-serif); font-size: 1.1rem; color: var(--univ-grey); font-style: italic; margin-top: 0.25rem; }
+
+.univ-nav { background-color: var(--univ-charcoal); margin: 0 -2rem; padding: 0 2rem; }
+.univ-nav ul { list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0; }
+.univ-nav li { margin: 0; padding: 0; }
+.univ-nav a { display: block; padding: 0.8rem 1.5rem; color: #FFFFFF; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; transition: background-color 0.2s; border: none; }
+.univ-nav a:hover, .univ-nav a:focus { background-color: var(--univ-red); }
+
+.profile-photo { width: 220px; height: auto; float: left; margin: 0.5rem 2rem 1.5rem 0; border: 1px solid var(--univ-border); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+.clearfix::after { content: ""; clear: both; display: table; }
+
+.site-main { max-width: var(--width-max); margin: 0 auto; padding: 4rem 2rem; min-height: 60vh; }
+.document-content { max-width: var(--width-reading); }
+h1, h2, h3, h4 { font-family: var(--font-sans); color: var(--univ-charcoal); font-weight: 600; }
+h1 { font-size: 2.25rem; margin-bottom: 2rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.25rem; color: var(--univ-red); border-bottom: 1px solid var(--univ-border); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+h3 { font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+p, ul, ol { margin-bottom: 1.5rem; font-size: 1.05rem; }
+ul { padding-left: 2rem; } li { margin-bottom: 0.5rem; }
+a { color: var(--univ-red); text-decoration: none; }
+a:hover { text-decoration: underline; }
+strong { color: #000000; font-weight: 600; }
+hr { border: 0; border-top: 1px solid var(--univ-border); margin: 3rem 0; }
+
+.univ-footer { background-color: var(--univ-bg-alt); border-top: 1px solid var(--univ-border); padding: 3rem 2rem; text-align: center; font-size: 0.9rem; color: var(--univ-grey); }
+.footer-links { margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem; }
+.footer-links a { color: var(--univ-charcoal); font-weight: 500; }
+
+/* ==========================================================================
+   Mobile Responsiveness & FORCED Swipe Navigation
+   ========================================================================== */
+@media (max-width: 768px) {
+  .univ-header { padding: 1.5rem 0 0 0; }
+  .header-container { padding: 0 1.5rem; }
+  .header-titles { margin-bottom: 1.5rem; }
+  .faculty-name { font-size: 1.4rem; }
+  
+  /* Bulldoze all default stacking behaviors */
+  .univ-nav {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    white-space: nowrap !important;
+  }
+  .univ-nav::-webkit-scrollbar { display: none !important; }
+  
+  .univ-nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    padding: 0 1rem !important;
+    margin: 0 !important;
+  }
+  
+  .univ-nav li {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  
+  .univ-nav a {
+    display: inline-block !important;
+    padding: 0.9rem 1.2rem !important;
+    font-size: 0.8rem !important;
+    border: none !important;
+    white-space: nowrap !important;
+  }
+  
+  .site-main { padding: 2rem 1.5rem; }
+  .profile-photo { float: none; display: block; width: 100%; max-width: 260px; margin: 0 auto 2rem auto; }
+}
+
+/* Replace/Update the Mobile section at the bottom of your style.css */
+@media (max-width: 768px) {
+    .header-container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+    .nav-toggle { display: block; background: var(--univ-red); color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; font-weight: 600; }
+    
+    /* Force Vertical Stack for the Mobile Menu */
+    .univ-nav { display: none; width: 100%; background: var(--univ-charcoal); order: 3; margin-top: 1rem; }
+    .univ-nav.active { display: block; }
+    .univ-nav ul { flex-direction: column !important; width: 100% !important; }
+    .univ-nav a { display: block !important; padding: 1rem !important; border-bottom: 1px solid #444; color: white !important; text-decoration: none !important; text-transform: uppercase !important; font-size: 0.9rem !important; }
+    
+    .profile-photo { float: none; display: block; width: 100%; max-width: 260px; margin: 0 auto 2rem auto; }
+}
+
+@media (min-width: 769px) {
+    .nav-toggle { display: none; }
+}
