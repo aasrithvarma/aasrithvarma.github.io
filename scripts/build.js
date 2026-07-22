@@ -12,7 +12,8 @@ const CONFIG = {
   srcDir: 'content',
   outDir: 'docs',
   templateDir: 'src/templates',
-  assetsDir: 'assets'
+  assetsDir: 'assets',
+  osfProjectUrl: 'https://osf.io/YOUR_OSF_ID/' // <-- UPDATE THIS ID
 };
 
 if (!fs.existsSync(CONFIG.outDir)) fs.mkdirSync(CONFIG.outDir, { recursive: true });
@@ -85,9 +86,8 @@ files.forEach(file => {
       
       const clinId = parsed.data.doi || `CN-${year}.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6)}`;
       const pageUrl = `${CONFIG.url}${urlPath}`;
-      const identifierDisplay = parsed.data.doi 
-        ? `<a href="https://doi.org/${parsed.data.doi}" target="_blank" rel="noopener" style="color: #0056b3; text-decoration: underline;">${parsed.data.doi} ↗</a>`
-        : `<span>${clinId}</span>`;
+      
+      const osfBadgeHtml = `<a href="${CONFIG.osfProjectUrl}" target="_blank" rel="noopener" title="Archived on Open Science Framework" style="display: inline-flex; align-items: center; gap: 6px; background: #f0f4f8; border: 1px solid #d9e2ec; color: #102a43; text-decoration: none; padding: 3px 10px; border-radius: 16px; font-size: 0.8rem; font-weight: 600; margin-left: auto;"><span style="color: #0056b3; font-weight: 800;">OSF</span> Project ↗</a>`;
 
       const articleHeaderMeta = `
         <div class="article-meta-header" style="border-bottom: 1px solid #eaeaea; padding-bottom: 1.25rem; margin-bottom: 2rem;">
@@ -101,9 +101,10 @@ files.forEach(file => {
           <div style="font-size: 1.05rem; color: #0056b3; margin-bottom: 0.75rem;">
             <span style="font-weight: 500; color: #0056b3;">${CONFIG.author}</span> <sup style="font-size: 0.75rem; color: #555;">1</sup>
           </div>
-          <div style="font-size: 0.85rem; color: #555; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px dashed #eaeaea; padding-top: 0.5rem;">
+          <div style="font-size: 0.85rem; color: #555; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px dashed #eaeaea; padding-top: 0.75rem; margin-top: 0.5rem;">
             <span><strong>CliN ID:</strong> ${clinId}</span>
             <span><strong>Persistent Link:</strong> <a href="${pageUrl}" style="color: #0056b3; text-decoration: none;">${pageUrl}</a></span>
+            ${osfBadgeHtml}
           </div>
         </div>
       `;
@@ -224,4 +225,4 @@ sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date(
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed successfully.');
+console.log('Build completed with OSF integration badge.');
