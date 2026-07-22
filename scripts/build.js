@@ -28,10 +28,12 @@ const copyAssets = (src, dest) => {
 };
 copyAssets(CONFIG.assetsDir, path.join(CONFIG.outDir, 'assets'));
 copyAssets('src/admin', path.join(CONFIG.outDir, 'admin'));
+
 const baseTemplate = fs.readFileSync(path.join(CONFIG.templateDir, 'base.html'), 'utf-8');
 const files = globSync(`${CONFIG.srcDir}/**/*.md`);
 const searchIndex = [];
 const sitemap = [];
+const articlesList = [];
 
 const generateSchema = (data, urlPath) => {
   const type = data.type === 'publication' ? 'MedicalScholarlyArticle' : data.type === 'post' ? 'BlogPosting' : 'ProfilePage';
@@ -44,7 +46,7 @@ const generateSchema = (data, urlPath) => {
       "medicalSpecialty": "Pediatric Cardiac Surgery",
       "url": CONFIG.url
     },
-    "headline": data.title,
+    "headline": data.title || "Clinical Notebook",
     "url": `${CONFIG.url}${urlPath}`,
     "author": { "@type": "Person", "name": CONFIG.author }
   });
@@ -67,6 +69,15 @@ files.forEach(file => {
   } else {
     urlPath = `/${relativePath}/`;
     outPath = path.join(CONFIG.outDir, relativePath, 'index.html');
+    
+    // Extract metadata for the automated articles index
+    if (relativePath.startsWith('articles/')) {
+      articlesList.push({
+        title: parsed.data.title || 'Untitled',
+        date: parsed.data.date ? new Date(parsed.data.date) : new Date(relativePath.match(/\d{4}-\d{2}-\d{2}/)?.[0] || Date.now()),
+        url: urlPath
+      });
+    }
   }
 
   const title = parsed.data.title ? `${parsed.data.title} | ${CONFIG.author}` : CONFIG.author;
@@ -92,6 +103,27 @@ files.forEach(file => {
     sitemap.push(`<url><loc>${CONFIG.url}${urlPath}</loc><lastmod>${new Date().toISOString()}</lastmod></url>`);
   }
 });
+
+// Compile and output the dynamic /articles/ index page
+articlesList.sort((a, b) => b.date - a.date);
+let articlesHtml = '<h1>Clinical Notebook</h1><p>Recent clinical updates, academic insights, and case reviews.</p><ul>';
+articlesList.forEach(article => {
+  const dateString = article.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  articlesHtml += `<li style="margin-bottom: 15px;"><a href="${article.url}"><strong>${article.title}</strong></a><br><small>${dateString}</small></li>`;
+});
+articlesHtml += '</ul>';
+
+const articlesIndexHtml = baseTemplate
+  .replace(/{{title}}/g, `Clinical Notebook | ${CONFIG.author}`)
+  .replace(/{{description}}/g, 'Index of published clinical updates and articles.')
+  .replace(/{{content}}/g, articlesHtml)
+  .replace(/{{canonical}}/g, `${CONFIG.url}/articles/`)
+  .replace(/{{schema}}/g, '{}')
+  .replace(/{{current_year}}/g, new Date().getFullYear());
+
+fs.mkdirSync(path.join(CONFIG.outDir, 'articles'), { recursive: true });
+fs.writeFileSync(path.join(CONFIG.outDir, 'articles', 'index.html'), articlesIndexHtml);
+sitemap.push(`<url><loc>${CONFIG.url}/articles/</loc><lastmod>${new Date().toISOString()}</lastmod></url>`);
 
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
