@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+
+  <url>
+    <loc>https://aasrithvarma.github.io/articles/metabolic-syndrome-an-epidemic/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Dr. Ayenampudi's Clinical Notebook</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-23T02:02:00.000Z</news:publication_date>
+      <news:title><![CDATA[Metabolic Syndrome, A Silent Epidemic Destroying Hearts Before Symptoms Begin]]></news:title>
+    </news:news>
+  </url>
+</urlset>
