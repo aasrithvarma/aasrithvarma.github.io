@@ -27,7 +27,7 @@ const copyAssets = (src, dest) => {
   }
 };
 copyAssets(CONFIG.assetsDir, path.join(CONFIG.outDir, 'assets'));
-
+copyAssets('src/admin', path.join(CONFIG.outDir, 'admin'));
 const baseTemplate = fs.readFileSync(path.join(CONFIG.templateDir, 'base.html'), 'utf-8');
 const files = globSync(`${CONFIG.srcDir}/**/*.md`);
 const searchIndex = [];
