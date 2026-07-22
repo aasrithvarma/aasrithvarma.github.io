@@ -1,4 +1,4 @@
-name: Deploy and Sync OSF Articles
+name: Deploy Site
 
 on:
   push:
@@ -21,10 +21,8 @@ jobs:
           npm install
           npm run build
 
-      - name: Push artifacts and sync with OSF
-        env:
-          OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
-          OSF_PROJECT: "rhs8g"
-        run: |
-          echo "Syncing updated markdown articles and static files to OSF project $OSF_PROJECT..."
-          # The OSF API automatically processes and reflects updates tied to your project container.
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
