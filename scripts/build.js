@@ -81,7 +81,7 @@ files.forEach(file => {
       const formattedDate = articleDateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
       const displayTitle = parsed.data.title || 'Untitled Clinical Update';
       
-      htmlContent = `
+      const wrappedHtmlContent = `
         <article>
           <header style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
             <h1 style="margin-bottom: 0.5rem; font-size: 2.2rem; color: #222;">${displayTitle}</h1>
@@ -100,6 +100,7 @@ files.forEach(file => {
         description: parsed.data.description || displayTitle
       });
 
+      // Include full body content via content:encoded for complete automated ingestion
       rssItems.push(`
         <item>
           <title><![CDATA[${displayTitle}]]></title>
@@ -107,10 +108,10 @@ files.forEach(file => {
           <guid>${CONFIG.url}${urlPath}</guid>
           <pubDate>${articleDateObj.toUTCString()}</pubDate>
           <description><![CDATA[${parsed.data.description || displayTitle}]]></description>
+          <content:encoded><![CDATA[${wrappedHtmlContent}]]></content:encoded>
         </item>
       `);
 
-      // Google News Sitemaps rule: only include articles published within the last 2 days
       if (articleDateObj >= twoDaysAgo) {
         newsSitemapItems.push(`
   <url>
@@ -125,6 +126,8 @@ files.forEach(file => {
     </news:news>
   </url>`);
       }
+      
+      htmlContent = wrappedHtmlContent;
     }
   }
 
@@ -172,9 +175,9 @@ fs.mkdirSync(path.join(CONFIG.outDir, 'articles'), { recursive: true });
 fs.writeFileSync(path.join(CONFIG.outDir, 'articles', 'index.html'), articlesIndexHtml);
 sitemap.push(`<url><loc>${CONFIG.url}/articles/</loc><lastmod>${new Date().toISOString()}</lastmod></url>`);
 
-// Generate RSS Feed
+// Generate RSS Feed with content namespace support
 const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Clinical Notebook | ${CONFIG.author}</title>
     <link>${CONFIG.url}/articles/</link>
@@ -186,7 +189,6 @@ const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
 fs.writeFileSync(path.join(CONFIG.outDir, 'rss.xml'), rssXml);
 sitemap.push(`<url><loc>${CONFIG.url}/rss.xml</loc><lastmod>${new Date().toISOString()}</lastmod></url>`);
 
-// Generate Dedicated News Sitemap (news-sitemap.xml)
 const newsSitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
@@ -198,4 +200,4 @@ sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date(
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed with RSS and News Sitemap.');
+console.log('Build completed with full-text RSS and News Sitemap.');
