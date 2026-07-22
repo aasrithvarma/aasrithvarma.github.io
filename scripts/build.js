@@ -83,17 +83,17 @@ files.forEach(file => {
       const displayTitle = parsed.data.title || 'Untitled Clinical Update';
       const year = articleDateObj.getFullYear();
       
-      // Fully functional interactive DOI & CliN ID generation
-      const doiValue = parsed.data.doi || `10.5281/zenodo.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 7)}`;
-      const doiLinkHtml = `<a href="https://doi.org/${doiValue}" target="_blank" rel="noopener" style="color: #0056b3; text-decoration: underline;">${doiValue} ↗</a>`;
-      const clinId = `CN-${year}.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6)}`;
+      const clinId = parsed.data.doi || `CN-${year}.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6)}`;
+      const pageUrl = `${CONFIG.url}${urlPath}`;
+      const identifierDisplay = parsed.data.doi 
+        ? `<a href="https://doi.org/${parsed.data.doi}" target="_blank" rel="noopener" style="color: #0056b3; text-decoration: underline;">${parsed.data.doi} ↗</a>`
+        : `<span>${clinId}</span>`;
 
-      // Journal-style header layout with functional DOI, CliN ID, and Share button
       const articleHeaderMeta = `
         <div class="article-meta-header" style="border-bottom: 1px solid #eaeaea; padding-bottom: 1.25rem; margin-bottom: 2rem;">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
             <span style="font-size: 0.9rem; color: #0056b3; font-weight: 600;">
-              Clin Notebook. ${year} ${formattedDate}; doi: ${doiLinkHtml}
+              Clin Notebook. ${year} ${formattedDate}; ID: ${clinId}
             </span>
             <button onclick="if(navigator.share){navigator.share({title: document.title, url: window.location.href}).catch(()=>{})}else{navigator.clipboard.writeText(window.location.href);alert('Article link copied to clipboard!');}" style="background: #fff; border: 1px solid #ccc; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; cursor: pointer; color: #333;">Share</button>
           </div>
@@ -103,12 +103,11 @@ files.forEach(file => {
           </div>
           <div style="font-size: 0.85rem; color: #555; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px dashed #eaeaea; padding-top: 0.5rem;">
             <span><strong>CliN ID:</strong> ${clinId}</span>
-            <span><strong>DOI:</strong> ${doiLinkHtml}</span>
+            <span><strong>Persistent Link:</strong> <a href="${pageUrl}" style="color: #0056b3; text-decoration: none;">${pageUrl}</a></span>
           </div>
         </div>
       `;
 
-      const pageUrl = `${CONFIG.url}${urlPath}`;
       const vancouverCitation = `${CONFIG.author}. ${displayTitle}. Clinical Notebook. ${formattedDate}. Available from: ${pageUrl}`;
       const apaCitation = `${CONFIG.author} (${year}). ${displayTitle}. <i>Clinical Notebook</i>. ${pageUrl}`;
 
@@ -225,4 +224,4 @@ sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date(
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed with CliN ID and interactive DOI links.');
+console.log('Build completed successfully.');
