@@ -11,7 +11,7 @@ public_folder: "/assets/images/uploads"
 collections:
   - name: "articles"
     label: "Clinical Notebook Articles"
-    folder: "src/content/articles" # Where new posts will be saved
+    folder: "content/articles" # Where new posts will be saved
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
