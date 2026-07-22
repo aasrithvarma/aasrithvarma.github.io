@@ -7,7 +7,7 @@ import crypto from 'crypto';
 
 const CONFIG = {
   url: 'https://aasrithvarma.github.io',
-  author: 'Dr. Tanmai Aasrith Varma Ayenampudi, M.D.',
+  author: 'Dr. Tanmai Aasrith Varma Ayenampudi',
   publicationName: "Dr. Ayenampudi's Clinical Notebook",
   srcDir: 'content',
   outDir: 'docs',
@@ -83,26 +83,26 @@ files.forEach(file => {
       const displayTitle = parsed.data.title || 'Untitled Clinical Update';
       const year = articleDateObj.getFullYear();
       
-      // Handle DOI or fallback identifier
-      const doiDisplay = parsed.data.doi 
+      // Clean Identifier/DOI block (ensures no stray '>' artifacts)
+      const identifierHtml = parsed.data.doi 
         ? `<strong>DOI:</strong> <a href="https://doi.org/${parsed.data.doi}" target="_blank" style="color: #0056b3; text-decoration: none;">${parsed.data.doi}</a>` 
         : `<strong>Identifier:</strong> CN-${year}.${crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6)}`;
 
-      // Author & Metadata Header Block to prepend to articles
+      // Correctly structured article metadata header
       const articleHeaderMeta = `
         <div class="article-meta-header" style="border-bottom: 1px solid #eaeaea; padding-bottom: 1rem; margin-bottom: 2rem;">
+          <div style="font-size: 0.9rem; color: #555; margin-bottom: 0.75rem;">
+            ${identifierHtml}
+          </div>
           <h1 style="margin-bottom: 0.5rem; font-size: 2.2rem; line-height: 1.2;">${displayTitle}</h1>
-          <div style="font-size: 0.95rem; color: #555; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+          <div style="font-size: 0.95rem; color: #555; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
             <span><strong>Author:</strong> ${CONFIG.author}</span>
             <span>•</span>
             <span><strong>Published:</strong> ${formattedDate}</span>
-            <span>•</span>
-            <span>${doiDisplay}</span>
           </div>
         </div>
       `;
 
-      // Generate formatted academic citations for the bottom of the article
       const pageUrl = `${CONFIG.url}${urlPath}`;
       const vancouverCitation = `${CONFIG.author}. ${displayTitle}. Clinical Notebook. ${formattedDate}. Available from: ${pageUrl}`;
       const apaCitation = `${CONFIG.author} (${year}). ${displayTitle}. <i>Clinical Notebook</i>. ${pageUrl}`;
@@ -116,7 +116,6 @@ files.forEach(file => {
         </section>
       `;
 
-      // Combine header metadata, markdown body, and footer citations
       htmlContent = articleHeaderMeta + htmlContent + citationBlockHtml;
 
       articlesList.push({
@@ -221,4 +220,4 @@ sitemap.push(`<url><loc>${CONFIG.url}/news-sitemap.xml</loc><lastmod>${new Date(
 fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
-console.log('Build completed with explicit author headers and DOI metadata.');
+console.log('Build completed cleanly; resolved stray ">" artifact.');
