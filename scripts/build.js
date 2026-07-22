@@ -103,7 +103,6 @@ files.forEach(file => {
           </div>
           <div style="font-size: 0.85rem; color: #555; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px dashed #eaeaea; padding-top: 0.5rem;">
             <span><strong>CliN ID:</strong> ${clinId}</span>
-            <span><strong>Persistent Link:</strong> <a href="${pageUrl}" style="color: #0056b3; text-decoration: none;">${pageUrl}</a></span>
           </div>
         </div>
       `;
