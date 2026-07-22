@@ -86,6 +86,55 @@
             menu.classList.toggle('active');
             toggle.textContent = menu.classList.contains('active') ? 'Close' : 'Menu';
         });
+
+        // Clean, non-destructive injector for journal identifier and share button on article pages
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.location.pathname.includes('/articles/') && window.location.pathname !== '/articles/') {
+                const articleContainer = document.querySelector('article.document-content');
+                if (articleContainer) {
+                    // Generate pseudo-DOI hash from path
+                    const pathSegment = window.location.pathname;
+                    let hash = 0;
+                    for (let i = 0; i < pathSegment.length; i++) {
+                        hash = ((hash << 5) - hash) + pathSegment.charCodeAt(i);
+                        hash |= 0;
+                    }
+                    const hexHash = Math.abs(hash).toString(16).substring(0, 6);
+                    const year = new Date().getFullYear();
+                    const identifier = `CN-${year}.${hexHash}`;
+
+                    // Create metadata header element styled cleanly to match typography
+                    const metaBar = document.createElement('div');
+                    metaBar.className = 'journal-meta-bar';
+                    metaBar.style.cssText = "font-size: 0.85rem; color: #555; margin-bottom: 1.5rem; font-family: monospace; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; padding-bottom: 0.75rem;";
+                    metaBar.innerHTML = `<span><strong>Identifier:</strong> ${identifier}</span><button id="article-share-btn" style="background: none; border: 1px solid #ccc; padding: 3px 8px; font-size: 0.8rem; border-radius: 4px; cursor: pointer; color: #444; font-family: inherit;">Share</button>`;
+
+                    // Prepend right inside the article container above the title/content
+                    articleContainer.insertBefore(metaBar, articleContainer.firstChild);
+
+                    // Bind share functionality
+                    const shareBtn = document.getElementById("article-share-btn");
+                    if (shareBtn) {
+                        shareBtn.addEventListener("click", async () => {
+                            if (navigator.share) {
+                                try {
+                                    await navigator.share({
+                                        title: document.title,
+                                        url: window.location.href
+                                    });
+                                } catch (err) {
+                                    console.log("Sharing error:", err);
+                                }
+                            } else {
+                                navigator.clipboard.writeText(window.location.href).then(() => {
+                                    alert("Article link copied to clipboard!");
+                                });
+                            }
+                        });
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
