@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now | Dr. Tanmai Aasrith Varma Ayenampudi</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <meta name="google-site-verification" content="NCgLaosh9QCvhZOHpU-zcLMkpYRAnV9BRae58DoSP2M" />
+    
+    <!-- Professional Physician Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Tanmai Aasrith Varma Ayenampudi",
+      "url": "https://aasrithvarma.github.io/",
+      "image": "https://aasrithvarma.github.io/assets/images/profile.jpg",
+      "jobTitle": "Physician & Aspiring Pediatric Cardiac Surgeon",
+      "alumniOf": [
+        "Progress University of Gyumri, Faculty of Medicine",
+        "Vinnytsia National Medical University"
+      ],
+      "knowsAbout": [
+        "Pediatric Cardiac Surgery",
+        "Congenital Heart Disease",
+        "Medical Artificial Intelligence",
+        "Cardiovascular Sciences"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/aasrithvarma",
+        "https://orcid.org/0000-0002-3924-1188",
+        "https://www.researchgate.net/profile/Tanmai-Aasrith-Varma-Ayenampudi"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="univ-header">
+        <div class="container header-container">
+            <div class="header-titles">
+                <a href="/" class="faculty-name">Dr. Tanmai Aasrith Varma Ayenampudi</a>
+                <span class="faculty-title">Physician &amp; Aspiring Pediatric Cardiac Surgeon</span>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">Menu</button>
+            
+            <nav class="univ-nav" id="navMenu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/biography/">Biography</a></li>
+                    <li><a href="/cv/">CV</a></li>
+                    <li><a href="/clinical-experience/">Clinical</a></li>
+                    <li><a href="/now/">Now</a></li>
+                    <li><a href="/articles/">Articles</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container site-main"><article class="document-content"><h1>Now</h1>
+<p><em>Updated: July 20, 2026</em></p>
+<p>This page serves as a public declaration of my current academic, entrepreneurial, and intellectual priorities.</p>
+<hr>
+<h2>Professional Examinations &amp; Academic Focus</h2>
+<p>I am currently dedicating my full time to rigorous preparation for advanced professional medical examinations. My primary objective remains securing a pathway into Pediatric Cardiac Surgery, requiring an uncompromising focus on cardiovascular sciences, anatomical precision, and surgical principles.</p>
+<h2>Entrepreneurial Ventures</h2>
+<p>I am actively conceptualizing and scaling new ventures in the digital and ethical consumer space. This includes directing <strong>Savière</strong>, a brand built on sustainability and health education, alongside managing brand identity and web design initiatives through <strong>Trip Nous</strong>.</p>
+<h2>Reading &amp; Personal Disciplines</h2>
+<p>Outside of extensive medical literature, my current reading stack is heavily focused on aviation science, world history, and geo-politics. I also maintain a strict personal discipline of endurance running, continually exploring the practical applications of exercise physiology.</p>
+</article></main>
+
+    <footer class="univ-footer">
+        <div class="container">
+            <nav class="footer-links">
+                <a href="/education/">Education</a>
+                <a href="/contact/">Contact &amp; Profiles</a>
+            </nav>
+            <p>&copy; 2026 Dr. Tanmai Aasrith Varma Ayenampudi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cal floating-popup embed -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "15min", {origin:"https://app.cal.com"});
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+      Cal.ns["15min"]("floatingButton", {"calLink":"dr-avie/consultation","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},"hideButtonIcon":false,"buttonText":"Book a Consultation","buttonColor":"#900c0c"}); 
+      Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+
+    <script>
+        const toggle = document.getElementById('navToggle');
+        const menu = document.getElementById('navMenu');
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggle.textContent = menu.classList.contains('active') ? 'Close' : 'Menu';
+        });
+
+        // Clean, non-destructive injector for journal identifier and share button on article pages
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.location.pathname.includes('/articles/') && window.location.pathname !== '/articles/') {
+                const articleContainer = document.querySelector('article.document-content');
+                if (articleContainer) {
+                    // Generate pseudo-DOI hash from path
+                    const pathSegment = window.location.pathname;
+                    let hash = 0;
+                    for (let i = 0; i < pathSegment.length; i++) {
+                        hash = ((hash << 5) - hash) + pathSegment.charCodeAt(i);
+                        hash |= 0;
+                    }
+                    const hexHash = Math.abs(hash).toString(16).substring(0, 6);
+                    const year = new Date().getFullYear();
+
+                    // Create metadata header element styled cleanly to match typography
+                    const metaBar = document.createElement('div');
+                    metaBar.className = 'journal-meta-bar';
+                    metaBar.style.cssText = "font-size: 0.85rem; color: #555; margin-bottom: 1.5rem; font-family: monospace; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; padding-bottom: 0.75rem;";
+                    metaBar.innerHTML = `<span><strong></strong> ${identifier}</span><button id="article-share-btn" style="background: none; border: 1px solid #ccc; padding: 3px 8px; font-size: 0.8rem; border-radius: 4px; cursor: pointer; color: #444; font-family: inherit;">Share</button>`;
+
+                    // Prepend right inside the article container above the title/content
+                    articleContainer.insertBefore(metaBar, articleContainer.firstChild);
+
+                    // Bind share functionality
+                    const shareBtn = document.getElementById("article-share-btn");
+                    if (shareBtn) {
+                        shareBtn.addEventListener("click", async () => {
+                            if (navigator.share) {
+                                try {
+                                    await navigator.share({
+                                        title: document.title,
+                                        url: window.location.href
+                                    });
+                                } catch (err) {
+                                    console.log("Sharing error:", err);
+                                }
+                            } else {
+                                navigator.clipboard.writeText(window.location.href).then(() => {
+                                    alert("Article link copied to clipboard!");
+                                });
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
