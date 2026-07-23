@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Metabolic Syndrome, A Silent Epidemic Destroying Hearts Before Symptoms Begin
-date: 2026-07-23T02:02
+date: 2026-07-22T02:02
 ---
 
 When I was in my second or third year of medical school, I barely knew what metabolic syndrome was. Like many medical students, I had encountered the term in lectures, memorized its diagnostic criteria for examinations, and moved on. It seemed like just another topic buried within an already vast medical curriculum, important enough to pass an exam, but not something I imagined would become one of the greatest public health concerns of our time.
