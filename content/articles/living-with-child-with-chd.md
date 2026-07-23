@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Living with Congenital Heart Disease: A Parent's Guide to Everyday Care"
-date: 2026-07-23T19:15
+date: 2026-07-22T19:15
 ---
 
 Receiving a diagnosis of your kid's congenital heart disease (CHD) can be one of the most overwhelming moments for a parent. It is natural to wonder whether your child will be able to eat normally, go to school, play with friends, travel, or live an active life.
