@@ -224,3 +224,18 @@ fs.writeFileSync(path.join(CONFIG.outDir, 'search.json'), JSON.stringify(searchI
 fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.join('')}</urlset>`);
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
 console.log('Build completed successfully.');
+
+const fs = require('fs');
+
+// Assuming you have an array storing your parsed article metadata
+const articlesIndex = []; 
+
+// Inside your existing loop that processes each Markdown file:
+// articlesIndex.push({
+//   title: frontmatter.title,
+//   url: `/articles/${slug}/`,
+//   description: frontmatter.description
+// });
+
+// After the loop finishes, compile the JSON artifact:
+fs.writeFileSync('docs/search-index.json', JSON.stringify(articlesIndex));
