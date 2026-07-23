@@ -225,8 +225,6 @@ fs.writeFileSync(path.join(CONFIG.outDir, 'sitemap.xml'), `<?xml version="1.0" e
 fs.writeFileSync(path.join(CONFIG.outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.url}/sitemap.xml`);
 console.log('Build completed successfully.');
 
-const fs = require('fs');
-
 // Assuming you have an array storing your parsed article metadata
 const articlesIndex = []; 
 
