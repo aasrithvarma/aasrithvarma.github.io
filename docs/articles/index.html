@@ -80,7 +80,40 @@
             <p>&copy; 2026 Dr. Tanmai Aasrith Varma Ayenampudi. All rights reserved.</p>
         </div>
     </footer>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const searchInput = document.getElementById('articleSearch');
+  const resultsContainer = document.getElementById('searchResults');
+  
+  // Fetch the static index artifact
+  let articles = [];
+  try {
+    const response = await fetch('/search-index.json');
+    articles = await response.json();
+  } catch (error) {
+    console.error('Failed to load search index', error);
+  }
 
+  // Filter and render logic
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    if (!query) return;
+
+    const filtered = articles.filter(article => 
+      article.title.toLowerCase().includes(query) || 
+      (article.description && article.description.toLowerCase().includes(query))
+    );
+
+    filtered.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
+      resultsContainer.appendChild(li);
+    });
+  });
+});
+</script>
     <!-- Cal floating-popup embed -->
     <script type="text/javascript">
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
