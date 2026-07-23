@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Heart Emergency or Just Acidity? How to Tell the Difference and When Not to Guess
-date: 2026-07-23T21:45
+date: 2026-07-23T21:49
 ---
 
 _Chest pain is one of the most common reasons people visit the emergency department. The good news is that not every chest pain is caused by a heart attack. The bad news is that a heart attack can sometimes feel exactly like indigestion or acidity. Knowing the difference could save a life._
