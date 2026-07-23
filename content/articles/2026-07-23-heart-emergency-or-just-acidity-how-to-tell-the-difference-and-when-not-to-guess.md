@@ -4,8 +4,6 @@ title: Heart Emergency or Just Acidity? How to Tell the Difference and When Not 
 date: 2026-07-23T21:45
 ---
 
-[![Mayo Clinic - Aortic Dissection](/assets/images/uploads/pasted-image-1784823286294.png "Aortic Dissection")](https://assets.mayoclinic.org/content/dam/media/en/images/2023/02/10/aortic-dissection.jpg)
-
 _Chest pain is one of the most common reasons people visit the emergency department. The good news is that not every chest pain is caused by a heart attack. The bad news is that a heart attack can sometimes feel exactly like indigestion or acidity. Knowing the difference could save a life._
 
 ### **"Doctor, Is It Just Gas?"**
@@ -86,7 +84,7 @@ Although there is overlap, certain features may provide clues.
 | Usually lasts more than 20 minutes | May come and go |
 | Antacids usually do not relieve symptoms | Often improves with antacids |
 
-However, **these differences are not always reliable.**
+However, these differences are not always reliable.
 
 Some heart attacks cause burning pain.
 
