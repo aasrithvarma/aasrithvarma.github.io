@@ -46,7 +46,7 @@ Typical effects:
 - Difficulty breathing
 - Progressive paralysis
 
-Image at : https://snakeinformation.music.blog/2018/12/05/indian-cobra/
+Image at : https://a-z-animals.com/animals/indian-cobra/
 
 ### Common Krait (_Bungarus caeruleus_)
 
