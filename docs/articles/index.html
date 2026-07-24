@@ -69,7 +69,7 @@
         </div>
     </header>
 
-    <main class="container site-main"><article class="document-content"><h1>Clinical Notebook</h1><p style="font-size: 1.1rem; color: #555;">Recent clinical updates, academic insights, and case reviews.</p><ul style="list-style-type: none; padding-left: 0;"><li style="margin-bottom: 1.5rem;"><a href="/articles/heart-emergencies/" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">Heart Emergency or Just Acidity? How to Tell the Difference and When Not to Guess</a><br><small style="color: #666;">July 23, 2026</small></li><li style="margin-bottom: 1.5rem;"><a href="/articles/living-with-child-with-chd/" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">Living with Congenital Heart Disease: A Parent's Guide to Everyday Care</a><br><small style="color: #666;">July 22, 2026</small></li><li style="margin-bottom: 1.5rem;"><a href="/articles/metabolic-syndrome-an-epidemic/" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">Metabolic Syndrome, A Silent Epidemic Destroying Hearts Before Symptoms Begin</a><br><small style="color: #666;">July 22, 2026</small></li></ul></article></main>
+    <main class="container site-main"><article class="document-content"><h1>Clinical Notebook</h1><p style="font-size: 1.1rem; color: #555;">Recent clinical updates, academic insights, and case reviews.</p><ul style="list-style-type: none; padding-left: 0;"><li style="margin-bottom: 1.5rem;"><a href="/articles/snake-bite-management/" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">Snake Bite in India - What Everyone Should Know</a><br><small style="color: #666;">July 24, 2026</small></li><li style="margin-bottom: 1.5rem;"><a href="/articles/motion-sickness/" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">Why Do People Get Motion Sickness? The Science Behind That Nauseous Feeling</a><br><small style="color: #666;">July 23, 2026</small></li><li style="margin-bottom: 1.5rem;"><a href="/articles/heart-emergencies/" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">Heart Emergency or Just Acidity? How to Tell the Difference and When Not to Guess</a><br><small style="color: #666;">July 23, 2026</small></li><li style="margin-bottom: 1.5rem;"><a href="/articles/living-with-child-with-chd/" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">Living with Congenital Heart Disease: A Parent's Guide to Everyday Care</a><br><small style="color: #666;">July 22, 2026</small></li><li style="margin-bottom: 1.5rem;"><a href="/articles/metabolic-syndrome-an-epidemic/" style="font-size: 1.25rem; font-weight: bold; text-decoration: none; color: #0056b3;">Metabolic Syndrome, A Silent Epidemic Destroying Hearts Before Symptoms Begin</a><br><small style="color: #666;">July 22, 2026</small></li></ul></article></main>
 
     <footer class="univ-footer">
         <div class="container">
@@ -80,40 +80,7 @@
             <p>&copy; 2026 Dr. Tanmai Aasrith Varma Ayenampudi. All rights reserved.</p>
         </div>
     </footer>
-<script>
-document.addEventListener('DOMContentLoaded', async () => {
-  const searchInput = document.getElementById('articleSearch');
-  const resultsContainer = document.getElementById('searchResults');
-  
-  // Fetch the static index artifact
-  let articles = [];
-  try {
-    const response = await fetch('/search-index.json');
-    articles = await response.json();
-  } catch (error) {
-    console.error('Failed to load search index', error);
-  }
 
-  // Filter and render logic
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    resultsContainer.innerHTML = ''; // Clear previous results
-
-    if (!query) return;
-
-    const filtered = articles.filter(article => 
-      article.title.toLowerCase().includes(query) || 
-      (article.description && article.description.toLowerCase().includes(query))
-    );
-
-    filtered.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
-      resultsContainer.appendChild(li);
-    });
-  });
-});
-</script>
     <!-- Cal floating-popup embed -->
     <script type="text/javascript">
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");

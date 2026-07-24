@@ -3,14 +3,25 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
-    <loc>https://aasrithvarma.github.io/articles/metabolic-syndrome-an-epidemic/</loc>
+    <loc>https://aasrithvarma.github.io/articles/snake-bite-management/</loc>
     <news:news>
       <news:publication>
         <news:name>Dr. Ayenampudi's Clinical Notebook</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-07-22T02:02:00.000Z</news:publication_date>
-      <news:title><![CDATA[Metabolic Syndrome, A Silent Epidemic Destroying Hearts Before Symptoms Begin]]></news:title>
+      <news:publication_date>2026-07-24T16:07:00.000Z</news:publication_date>
+      <news:title><![CDATA[Snake Bite in India - What Everyone Should Know]]></news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://aasrithvarma.github.io/articles/motion-sickness/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Dr. Ayenampudi's Clinical Notebook</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-23T22:47:00.000Z</news:publication_date>
+      <news:title><![CDATA[Why Do People Get Motion Sickness? The Science Behind That Nauseous Feeling]]></news:title>
     </news:news>
   </url>
   <url>
