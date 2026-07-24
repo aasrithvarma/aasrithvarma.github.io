@@ -70,7 +70,7 @@ Later:
 
 This is one reason krait bites are particularly dangerous—they may initially resemble food poisoning or gastritis.
 
-Image at : https://udupisnakeinthecity.com/common-krait-bungarus-caeruleus/
+Image at : https://a-z-animals.com/animals/krait/
 
 ### Russell's Viper (_Daboia russelii_)
 
@@ -97,7 +97,7 @@ Common symptoms include:
 - Bleeding
 - Coagulopathy
 
-Image at : https://en.wikipedia.org/wiki/Echis
+Image at : https://a-z-animals.com/animals/saw-scaled-viper/
 
 ### 
 
