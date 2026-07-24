@@ -46,13 +46,7 @@ Typical effects:
 - Difficulty breathing
 - Progressive paralysis
 
-_
-
-![Credits: https://snakeinformation.music.blog/2018/12/05/indian-cobra/](/assets/images/uploads/pasted-image-1784890132643.png "Indian Cobra")
-
-```plain
-Image Credits : https://snakeinformation.music.blog/2018/12/05/indian-cobra/
-```
+Image at : https://snakeinformation.music.blog/2018/12/05/indian-cobra/
 
 ### Common Krait (_Bungarus caeruleus_)
 
@@ -76,13 +70,7 @@ Later:
 
 This is one reason krait bites are particularly dangerous—they may initially resemble food poisoning or gastritis.
 
-_
-
-![Credits: https://udupisnakeinthecity.com/common-krait-bungarus-caeruleus/](/assets/images/uploads/pasted-image-1784890023868.png "Common Krait")
-
-```plain
-Image Credits : https://udupisnakeinthecity.com/common-krait-bungarus-caeruleus/
-```
+Image at : https://udupisnakeinthecity.com/common-krait-bungarus-caeruleus/
 
 ### Russell's Viper (_Daboia russelii_)
 
@@ -96,13 +84,7 @@ Typical features:
 - Kidney injury
 - Blood clotting abnormalities
 
-_
-
-![Credits: https://a-z-animals.com/animals/russells-viper/](/assets/images/uploads/pasted-image-1784890430126.png "Russel's Viper")
-
-```plain
-Image Credits : https://a-z-animals.com/animals/russells-viper/
-```
+Image at : https://a-z-animals.com/animals/russells-viper/
 
 ### Saw-scaled Viper (_Echis carinatus_)
 
@@ -115,13 +97,7 @@ Common symptoms include:
 - Bleeding
 - Coagulopathy
 
-_ 
-
-![Credits: https://en.wikipedia.org/wiki/Echis](/assets/images/uploads/pasted-image-1784890547544.png)
-
-```plain
-Image Credits : https://en.wikipedia.org/wiki/Echis
-```
+Image at : https://en.wikipedia.org/wiki/Echis
 
 ### 
 
